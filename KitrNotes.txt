@@ -1,0 +1,41 @@
+Solving larger programs
+
+Identify and define your models or entities
+
+Check the business requirements 
+
+Car and Seller
+
+
+Car and Buyer
+
+1 car can be purchased by 1 buyer
+
+1 buyer can purchase many cars
+
+Think about your models, think about what will interact with the business, generally those are models 
+Business requirements
+
+Cars are a core aspect of our car dealership application 
+We need a model or template/blueprint for every car that will exist within our business
+We annotate each property and
+
+We created a user class (aka model)
+
+Almost anything you want to store as data, create a model for it. 
+For most businesses you keep records of everything.
+EG, a cart or transaction should likely be a model
+
+
+--Create models
+--Create repository interfaces
+
+CRUD
+Create
+Read
+Update
+Delete
+
+
+
+
