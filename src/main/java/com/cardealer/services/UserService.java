@@ -22,7 +22,7 @@ public class UserService{
 
     public User signUp(User user){
         User savedUser = userRepository.save(user);
-        return savedUser;   
+        return savedUser;
     }
 
 
