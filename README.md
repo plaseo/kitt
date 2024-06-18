@@ -1,5 +1,4 @@
-Kitt   
-# Project Title
+Kitt	
 
 A learning project to implement a simple car dealership website.
 
