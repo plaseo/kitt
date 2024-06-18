@@ -10,25 +10,23 @@
     <jsp:include page = "navbar.jsp"/>
 
 
-    <form>
+    <form method="post" action "/signup">
 
-        <label>First Name</label>
-        <input type ="text" name = "firstName"/>
-        <label>Last Name</label>
-        <input type ="text" name = "lastName"/>
-        <label>Date of Birth</label>
-        <input type="date" name ="dateOfBirth"/>
-        <label>Phone Number</label>
-        <input type="text" name="email"/>
-        <label>Email</label>
-        <input type="password" name="password"/>
-        <label>Password</label>
-        <input/>
+        <label>First Name</label> <br>
+        <input type ="text" name = "firstName"/> <br>
+        <label>Last Name</label> <br>
+        <input type = "text" name ="lastName"/> <br>
+        <label>Date of Birth</label> <br>
+        <input type ="date" name="dateOfBirth"/> <br>
+        <label>Phone Number</label> <br>
+        <input type ="text" name="phoneNumber"/> <br>
+        <label>Email</label> <br>
+        <input type="email" name="email" /> <br>
+        <label>Password</label> <br>
+        <input type ="password" name ="password" /> <br>
+
+        <button type = "submit">Sign-Up</button>
     
-
-
-
-
     </form>
     
 </body>

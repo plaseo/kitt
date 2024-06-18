@@ -36,6 +36,11 @@ Read
 Update
 Delete
 
+Questions for teacher?
+camelCase on the columns (use user.java model as example) 
+Application.properties is complaining about line 18
+'spring.jpa.hibernate.naming-strategy' is an unknown property. Did you mean 'spring.jpa.hibernate.naming.implicit-strategy'?
+
 
 
 

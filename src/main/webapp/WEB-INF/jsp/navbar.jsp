@@ -8,9 +8,9 @@
 <body>
 
     <div>
-        <a>Home</a>
-        <a>Sign-In</a>
-        <a>Sign-Up</a>
+        <a href="/">Home</a>
+        <a href="/signin">Sign-In</a>
+        <a href="/signup">Sign-Up</a>
     </div>
 
 

@@ -2,9 +2,7 @@ package com.cardealer.models;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import com.cardealer.enums.UserRole;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
