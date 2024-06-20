@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-Up</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/signup.css"/>
 </head>
 <body>
+    
+    <jsp:include page ="navbar.jsp"/>
 
-    <jsp:include page = "navbar.jsp"/>
-
-
-    <form method="post" action "/signup">
+    <div class = "signuppage">
+        <div class = "signupbox">
+    <form method="post" action="/signup">
 
         <label>First Name</label> <br>
         <input type ="text" name = "firstName"/> <br>
@@ -26,8 +28,10 @@
         <input type ="password" name ="password" /> <br>
 
         <button type = "submit">Sign-Up</button>
-    
+
     </form>
-    
+
+</div>
+</div>
 </body>
 </html>

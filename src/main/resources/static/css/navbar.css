@@ -1,0 +1,19 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    border: 5px solid rgb(81, 178, 224);
+    background-color:rgb(81, 178, 224);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navitem {
+a {text-decoration: none;
+    color: aliceblue;}
+/* b {text-decoration: white;} */
+border: 2px solid rgb(112, 186, 71);
+background-color: rgb(112, 186, 71);
+font-size: larger;
+/* background-color: black; */
+/* font-size: larger; */
+
+}

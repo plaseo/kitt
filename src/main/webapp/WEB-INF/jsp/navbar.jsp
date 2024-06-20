@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/navbar.css"/>
 </head>
 <body>
+    
 
-    <div>
-        <a href="/">Home</a>
-        <a href="/signin">Sign-In</a>
-        <a href="/signup">Sign-Up</a>
+    <div class = "nav">
+        <button class="navitem"><a href="/" >Home</a></button>
+        <button class="navitem"><a href="/signin" >Sign-In</a></button>
+        <button class="navitem"><a href="/signup" >Sign-Up</a></button>
     </div>
 
 
-    
 </body>
 </html>
