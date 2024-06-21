@@ -1,7 +1,7 @@
 .homepage {
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/1970-1973_Nissan_Fairlady_Z.jpg/2880px-1970-1973_Nissan_Fairlady_Z.jpg);
-    height: 100vh;
-    background-size: 100% 100%;
+    height: 75vh;
+    background-size: cover;
 }
 
 body h1 {
