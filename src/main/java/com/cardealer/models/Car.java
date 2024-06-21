@@ -1,11 +1,14 @@
 package com.cardealer.models;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import com.cardealer.enums.BodyStyle;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -52,7 +55,8 @@ public class Car {
     
     @Column(name = "engineType")
     private String engineType;
-    
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "bodyStyle")
     private BodyStyle bodyStyle;
     
@@ -67,6 +71,30 @@ public class Car {
     
     @Column(name = "vin", unique=true, nullable = false)
     private String vin;
+    //possible constraints : nullable, unique, primary key, length
+
+    public Car(String manufacturerName, String model, int year, String color, String transmission, double mileage,
+            LocalDate dateOfPurchase, String description, String engineType, BodyStyle bodyStyle, double price,
+            boolean isAvailable, boolean isNew, String vin) {
+        this.manufacturerName = manufacturerName;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.transmission = transmission;
+        this.mileage = mileage;
+        this.dateOfPurchase = dateOfPurchase;
+        this.description = description;
+        this.engineType = engineType;
+        this.bodyStyle = bodyStyle;
+        this.price = price;
+        this.isAvailable = isAvailable;
+        this.isNew = isNew;
+        this.vin = vin;
+    }
+
+    public Car(){
+
+    }
     //possible constraints : nullable, unique, primary key, length
     
 }

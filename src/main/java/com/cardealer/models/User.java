@@ -63,6 +63,21 @@ public class User {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Car> cars;
 
+    public User(String firstName, String lastName, LocalDate dateOfBirth, String address, String email, String password,
+            String phoneNumber, UserRole role, boolean isAdmin) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.address = address;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.role = role;
+        this.isAdmin = isAdmin;
+    }
+
+    
+
     
 
 
