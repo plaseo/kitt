@@ -13,6 +13,7 @@
         <button class="navitem"><a href="/" >Home</a></button>
         <button class="navitem"><a href="/signin" >Sign-In</a></button>
         <button class="navitem"><a href="/signup" >Sign-Up</a></button>
+        <button class="navitem"><a href="/cars" >Cars</a></button>
     </div>
 
 

@@ -63,8 +63,9 @@ public class User {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Car> cars;
 
-    public User(String firstName, String lastName, LocalDate dateOfBirth, String address, String email, String password,
-            String phoneNumber, UserRole role, boolean isAdmin) {
+    public User(Long id, String firstName, String lastName, LocalDate dateOfBirth, String address, String email,
+            String password, String phoneNumber, UserRole role, boolean isAdmin, List<Car> cars) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -74,8 +75,8 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.role = role;
         this.isAdmin = isAdmin;
+        this.cars = cars;
     }
-
     
 
     

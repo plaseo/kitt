@@ -1,35 +1,30 @@
 package com.cardealer.seeders;
 
 import java.time.LocalDate;
-
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
-
 import com.cardealer.enums.BodyStyle;
 import com.cardealer.models.Car;
 import com.cardealer.repositories.CarRepository;
 
+
 @Configuration
 public class CarDataSeeder {
     @Bean
-    @DependsOn("flyway")
+    // @DependsOn("flyway")
     CommandLineRunner initDatabase(CarRepository carRepository){
         return args -> {
-            carRepository.save(new Car("Toyota", "Sup", 2005, "Green", "Auto", 10000, LocalDate.of(2020, 1, 8), "Cool", "V8", BodyStyle.SEDAN, 5001, true, false, "VIN594859485"));
-            carRepository.save(new Car("Toyota", "Camry", 2018, "Silver", "Auto", 25000, LocalDate.of(2021, 5, 15), "Comfortable", "Inline-4", BodyStyle.SEDAN, 15000, false, true, "VIN123456789"));
-            carRepository.save(new Car("Honda", "Civic", 2020, "Black", "Manual", 18000, LocalDate.of(2022, 2, 28), "Sporty", "Inline-4", BodyStyle.HATCHBACK, 12000, true, false, "VIN987654321"));
-            carRepository.save(new Car("Ford", "F-150", 2019, "Blue", "Auto", 35000, LocalDate.of(2021, 8, 10), "Rugged", "V6", BodyStyle.SEDAN, 25000, true, true, "VIN456789123"));
-            carRepository.save(new Car("Chevrolet", "Corvette", 2023, "Red", "Manual", 60000, LocalDate.of(2024, 4, 5), "Fast", "V8", BodyStyle.COUPE, 40000, false, true, "VIN789456123"));
-            carRepository.save(new Car("BMW", "X5", 2017, "White", "Auto", 40000, LocalDate.of(2020, 10, 20), "Luxurious", "V6", BodyStyle.SUV, 30000, true, false, "VIN654321987"));
-            carRepository.save(new Car("Mercedes-Benz", "E-Class", 2022, "Gray", "Auto", 55000, LocalDate.of(2023, 1, 3), "Elegant", "Inline-6", BodyStyle.SEDAN, 35000, false, true, "VIN321789654"));
-            carRepository.save(new Car("Audi", "A4", 2021, "Silver", "Auto", 42000, LocalDate.of(2022, 6, 15), "Premium", "Inline-4", BodyStyle.SEDAN, 28000, true, false, "VIN456123789"));
-            carRepository.save(new Car("Tesla", "Model 3", 2020, "Blue", "Electric", 55000, LocalDate.of(2021, 3, 8), "Environmentally friendly", "Electric", BodyStyle.SEDAN, 38000, false, true, "VIN987321654"));
-            carRepository.save(new Car("Subaru", "Outback", 2019, "Green", "Auto", 30000, LocalDate.of(2020, 7, 12), "Versatile", "Boxer-4", BodyStyle.COUPE, 20000, true, false, "VIN789654321"));
-            carRepository.save(new Car("Kia", "Soul", 2022, "Yellow", "Auto", 25000, LocalDate.of(2023, 2, 18), "Compact", "Inline-4", BodyStyle.HATCHBACK, 15000, false, true, "VIN654987321"));
-
+            carRepository.save(new Car("Chevrolet", "Camaro", 1969, "Red", "Manual", 35000, LocalDate.of(2022, 5, 10), "Muscle car", "V8", BodyStyle.COUPE, 80000, false, true, "VIN123456789"));
+            carRepository.save(new Car("Ford", "Mustang", 1967, "Blue", "Manual", 30000, LocalDate.of(2021, 8, 15), "American classic", "V8", BodyStyle.COUPE, 75000, true, false, "VIN987654321"));
+            carRepository.save(new Car("Dodge", "Charger", 1970, "Black", "Auto", 40000, LocalDate.of(2023, 2, 20), "Iconic muscle car", "V8", BodyStyle.SEDAN, 90000, false, true, "VIN456789123"));
+            carRepository.save(new Car("Chevrolet", "Bel Air", 1957, "Pink", "Auto", 45000, LocalDate.of(2024, 1, 5), "Classic cruiser", "V8", BodyStyle.SEDAN, 85000, true, false, "VIN789456123"));
+            carRepository.save(new Car("Porsche", "911", 1973, "Silver", "Manual", 90000, LocalDate.of(2023, 10, 12), "Legendary sports car", "Flat-6", BodyStyle.COUPE, 60000, false, true, "VIN654321987"));
+            carRepository.save(new Car("Jaguar", "E-Type", 1965, "Green", "Manual", 80000, LocalDate.of(2022, 6, 30), "Iconic sports car", "Inline-6", BodyStyle.COUPE, 50000, true, false, "VIN321789654"));
+            carRepository.save(new Car("Mercedes-Benz", "300SL", 1955, "Silver", "Manual", 120000, LocalDate.of(2021, 12, 8), "Luxury", "Inline-6", BodyStyle.COUPE, 40000, false, true, "VIN456123789"));
+            carRepository.save(new Car("Volkswagen", "Beetle", 1963, "Yellow", "Manual", 25000, LocalDate.of(2020, 7, 25), "Iconic compact car", "Flat-4", BodyStyle.SEDAN, 100000, true, false, "VIN987321654"));
+            carRepository.save(new Car("Chevrolet", "Corvette", 1966, "Blue", "Manual", 70000, LocalDate.of(2023, 4, 15), "American classic", "V8", BodyStyle.COUPE, 70000, false, true, "VIN789654321"));
+            carRepository.save(new Car("Ford", "Thunderbird", 1957, "White", "Auto", 60000, LocalDate.of(2022, 3, 18), "Classic luxury car", "V8", BodyStyle.COUPE, 80000, true, false, "VIN654987321"));
             
         };
     }

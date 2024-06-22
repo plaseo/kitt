@@ -37,7 +37,7 @@ public class UserController {
             return "signin";
         }
     @PostMapping("/signin")
-    public String submitSignIn (@ModelAttribute User user, Model model){
+    public String submitSignIn(@ModelAttribute User user, Model model){
         try {
         User authenticatedUser = userService.signIn(user);
         //the parameters of addAttribute include: "attributeName" 
@@ -54,10 +54,7 @@ public class UserController {
     }
     
 
-
-
-
-    }
+}
 
 
     
