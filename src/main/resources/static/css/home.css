@@ -1,5 +1,13 @@
+.big-margin {
+    /* border: 1px solid #ccc; */
+    /* background: rgb(47, 31, 35); */
+    background-clip: padding-box;
+    box-shadow: 0 0 10px #ff0000;
+    /* margin: 1px; */
+}
 .homepage {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/1970-1973_Nissan_Fairlady_Z.jpg/2880px-1970-1973_Nissan_Fairlady_Z.jpg);
+    background-color: rgb(47, 31, 35);
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/1970-1973_Nissan_Fairlady_Z.jpg/2880px-1970-1973_Nissan_Fairlady_Z.jpg), rgb(47, 31, 35);
     height: 75vh;
     background-size: cover;
 }
@@ -7,12 +15,12 @@
 body h1 {
     text-align: center;
     color: aliceblue;
-    background-color: rgb(81, 178, 224);    
+    background-color: rgb(9, 24, 19);    
     
 }
 .home{
    display: flex;
-   border: 5px solid rgb(81, 178, 224);
+   border: 5px solid rgb(9, 24, 19);
    justify-content: center;
 
 }

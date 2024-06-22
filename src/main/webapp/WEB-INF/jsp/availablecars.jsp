@@ -7,6 +7,7 @@
     <title>Cars</title>
 </head>
 <body>
+    <jsp:include page="navbar.jsp"/>
     <h1>Cars</h1>
 
 

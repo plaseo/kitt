@@ -7,19 +7,19 @@
     <link rel=stylesheet href="/css/home.css"/>
 </head>
 <body>
-    
-   <jsp:include page="navbar.jsp"/>
+    <div class="big-margin">
+        <jsp:include page="navbar.jsp"/>
 
-   <div>
-    <h1 class="home">Welcome Home ${user.firstName}</h1>
-   </div>
-   <div class="homepage">
+        <div>
+        <h1 class="home">Welcome Home ${user.firstName}</h1>
+        </div>
+        <div class="homepage">
   
-</div>
+        </div>
 
-<footer>
-    CopyRight Area, Contact Us, Support
-</footer>
-
+        <footer>
+        CopyRight Area, Contact Us, Support
+        </footer>
+    </div>
 </body>
 </html>
