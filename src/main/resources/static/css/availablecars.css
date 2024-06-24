@@ -1,0 +1,41 @@
+.carpage {
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
+    
+.caritems {
+
+    
+    border:5px solid;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-color: #2ea44f;
+    background-color: rgb(19, 19, 17);
+    
+
+    /* background-color: rgb(31, 29, 27); */
+     
+
+}
+    
+.caritems img{
+    
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    
+}
+
+b {
+    color: rgb(99, 179, 32);
+    text-decoration: none!important;
+    
+}

@@ -57,14 +57,14 @@ public class User {
     private UserRole role;
     
     @Column(name = "isAdmin")
-    private boolean isAdmin;
+    private Boolean isAdmin;
 
     @OneToMany
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Car> cars;
 
     public User(Long id, String firstName, String lastName, LocalDate dateOfBirth, String address, String email,
-            String password, String phoneNumber, UserRole role, boolean isAdmin, List<Car> cars) {
+            String password, String phoneNumber, UserRole role, Boolean isAdmin, List<Car> cars) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -77,10 +77,8 @@ public class User {
         this.isAdmin = isAdmin;
         this.cars = cars;
     }
-    
+    public User(){
 
-    
-
-
+    }
     
 }

@@ -1,4 +1,5 @@
 .nav {
+    color: white;
     display: flex;
     justify-content: space-around;
     border: 5px solid rgb(9, 24, 19);
@@ -8,12 +9,12 @@
 
 .navitem {
     appearance: none;
-    background-color: #2ea44f;
+    background-color: rgb(46, 164, 78);
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
     box-sizing: border-box;
-    color: #fff;
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -29,4 +30,9 @@
     vertical-align: middle;
     white-space: nowrap;
 
+}
+
+a{
+    color: white;
+    text-decoration: none;
 }
