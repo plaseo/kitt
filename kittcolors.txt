@@ -1,0 +1,17 @@
+Primary 
+Hex : 63b320
+RBG: 99 179 32
+
+Secondary
+Hex: 40a6fa
+RGB: 64 166 250
+
+Background
+Hex: 131311
+RGB: 19 19 17
+
+Surface
+Hex: 1f1d1b
+RGB: 31 29 27
+
+

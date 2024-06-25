@@ -49,6 +49,9 @@ public class Car {
     
     @Column(name = "dateOfPurchase")
     private LocalDate dateOfPurchase;
+
+    @Column(name = "dateSold")
+    private LocalDate dateSold;
     
     @Column(name = "description", length=5000)
     private String description;

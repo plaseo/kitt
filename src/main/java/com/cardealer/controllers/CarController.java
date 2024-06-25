@@ -33,4 +33,10 @@ public class CarController {
 
         return "cardetails";
     }
+
+    @GetMapping("/addcar")
+    public String addCar(){
+
+        return "addcar";
+    }
 }
