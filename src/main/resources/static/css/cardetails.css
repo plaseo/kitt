@@ -1,4 +1,4 @@
-.carouselsize{
+    .carouselsize {
 
     max-width: 600px;
     margin: auto;
@@ -12,13 +12,33 @@
     
     }
     
-    .cardetailscontent{
-    
-    text-align: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    .cardetailscontent {
+
+        
+        border:5px solid;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        border-color: #2ea44f;
+        background-color: rgb(19, 19, 17);
+        color: white;
+
     }
     
-    h1{
-    
-        text-align: center;
+    .cardetailheader {
+        
+        border:5px solid;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        border-color: #2ea44f;
+        background-color: rgb(19, 19, 17);
+        color: white;
     }

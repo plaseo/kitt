@@ -12,7 +12,11 @@
 <body>
     <jsp:include page="navbar.jsp"/>
 
-    <h1>Cars</h1>
+    <div>
+        <div class="availablecarsheader">
+        <h1>Cars</h1>
+    </div>    
+
 <div class="carpage">
 
 <c:forEach var ="car" items="${availableCars}">

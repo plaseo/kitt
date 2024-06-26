@@ -12,7 +12,10 @@
 <body>
     <jsp:include page="navbar.jsp"/>
     
-    <h1>${car.year} ${car.manufacturerName} ${car.model}</h1>
+    <div>
+        <div class="cardetailheader">
+        <h1>${car.year} ${car.manufacturerName} ${car.model}</h1>
+    </div>
 
   <div class="carouselsize">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
@@ -41,23 +44,19 @@
    
 
 
-
-    <p>Year: ${car.year}</p>
-    <p>Manufacturer: ${car.manufacturerName}</p>
-    <p>Model: ${car.model}</p>
-    <p>Transmission: ${car.transmission}</p>
-    <p>Bodystyle: ${car.bodyStyle}</p>
-    <p>Color: ${car.color}</p>
-    <p>Mileage: ${car.mileage}</p>
-    <p>Description: ${car.description}</p>
-
-    <c:forEach var="photo" items="${car.photos}" varStatus="statusez  ">
-
-    <div class="galleria">
-      <div id="gallery>">
-        <img src="${photo.photoUrl}" alt="Car photo">
-      </div>
+    <div>
+        <div class="cardetailscontent">    
+        <p>Year: ${car.year}</p>
+        <p>Manufacturer: ${car.manufacturerName}</p>
+        <p>Model: ${car.model}</p>
+        <p>Transmission: ${car.transmission}</p>
+        <p>Bodystyle: ${car.bodyStyle}</p>
+        <p>Color: ${car.color}</p>
+        <p>Mileage: ${car.mileage}</p>
+        <p>Description: ${car.description}</p>
+        
     </div>
+    
     
 
 

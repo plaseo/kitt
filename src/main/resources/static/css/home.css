@@ -12,16 +12,17 @@
     background-size: cover;
 }
 
-body h1 {
-    text-align: center;
-    color: aliceblue;
-    background-color: rgb(9, 24, 19); 
-    
-}
 .home{
-   display: flex;
-   border: 5px solid rgb(9, 24, 19);
-   justify-content: center;
+    border:5px solid;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-color: #2ea44f;
+    background-color: rgb(19, 19, 17);
+    color: white;
 
 }
 

@@ -13,8 +13,10 @@
         <jsp:include page="navbar.jsp"/>
 
         <div>
-        <h1 class="home">Welcome Home ${user.firstName}</h1>
+            <div class="home">
+            <h1>Welcome Home ${user.firstName}</h1>
         </div>
+        
         <div class="homepage">
   
         </div>

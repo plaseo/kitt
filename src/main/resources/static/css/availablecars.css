@@ -32,8 +32,15 @@
     
 }
 
-b {
-    color: rgb(99, 179, 32);
-   
-    
+.availablecarsheader{
+        border:5px solid;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        border-color: #2ea44f;
+        background-color: rgb(19, 19, 17);
+        color: white;
 }

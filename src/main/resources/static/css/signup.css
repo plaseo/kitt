@@ -9,10 +9,21 @@
 }
 
 .signupbox {
-border:1px solid;
-padding: 40px;
-margin: auto;
-font-size: larger;
-border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    width: 50vw;
+    /* align-items: center; */
+    text-align: center;
+    border:5px solid;
+    padding: 10px;
+    /* margin: 5px; */
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-color: #2ea44f;
+    background-color: rgb(19, 19, 17);
+    color: white;
 
 }
