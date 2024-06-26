@@ -12,48 +12,44 @@
     <jsp:include page="navbar.jsp"/>
 
 
-    <form>
+    <form method="post" action="/addcar">
 
-        <label>Manufacturer Name</label>
-        <input type="text" name="manufacturerName"/>
-        <label>Model</label>
-        <input type="text" name="model"/>
-        <label>Year</label>
-        <input type="number" name="year"/>
-        <label>Color</label>
-        <input type="text" name="color" />
-        <label>Transmission</label>
-        <input type="text" name="transmission"/>
-        <label>Mileage</label>
-        <input type="number" name="mileage"/>
-        <label>Description</label>
-        <input type="text" name="description" />
-        <label>Engine Type</label>
-        <input type="text" name="engineType"/>
-        <label>Body Style</label>
+        <label>Manufacturer Name</label><br>
+        <input type="text" name="manufacturerName"/><br>
+        <label>Model</label><br>
+        <input type="text" name="model"/><br>
+        <label>Year</label><br>
+        <input type="number" name="year"/><br>
+        <label>Color</label><br>
+        <input type="text" name="color" /><br>
+        <label>Transmission</label><br>
+        <input type="text" name="transmission"/><br>
+        <label>Mileage</label><br>
+        <input type="number" name="mileage"/><br>
+        <label>Description</label><br>
+        <input type="text" name="description" /><br>
+        <label>Engine Type</label><br>
+        <input type="text" name="engineType"/><br>
+        <label>Body Style</label><br>
         <select>
-            <option name="BodyStyle.SEDAN">SEDAN</option>
-            <option name="BodyStyle.HATCHBACK">HATCHBACK</option>
-            <option name="BodyStyle.SUV">SUV</option>
-            <option name="BodyStyle.CONVERTABLE">CONVERTABLE</option>
-            <option name="BodyStyle.COUPE">COUPE</option>
-        </select>
-        <label>Price</label>
-        <input type="number" name="price"/>
+            <option value="BodyStyle.SEDAN">SEDAN</option>
+            <option value="BodyStyle.HATCHBACK">HATCHBACK</option>
+            <option value="BodyStyle.SUV">SUV</option>
+            <option value="BodyStyle.CONVERTABLE">CONVERTIBLE</option>
+            <option value="BodyStyle.COUPE">COUPE</option>
+        </select><br>
+        <label>Price</label><br>
+        <input type="number" name="price"/><br>
         <label>Is Available</label>
-        <input type="checkbox" name="isAvailable"/>
+        <input type="checkbox" name="isAvailable"/><br>
         <label>Is New</label>
-        <input type="checkbox" name="isNew"/>
-        <label>VIN number</label>
-        <input type="text" name="vin"/>
-        <label>Main Photo</label>
-        <input type="url" name="photoUrl"/>  
-
-        <label>Photos</label>
-        <input />
-
-
-
+        <input type="checkbox" name="isNew"/><br>
+        <label>VIN number</label><br>
+        <input type="text" name="vin"/><br>
+        <label>Main Photo</label><br>
+        <input type="url" name="photoUrl"/> <br>
+        <label>Photos</label><br>
+        <input /><br>
         <button type="submit">Submit</button>
     </form>
 </body>

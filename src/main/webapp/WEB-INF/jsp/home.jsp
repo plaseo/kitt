@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herbies: Home</title>
+    <title>Kitt's Home</title>
     <link rel=stylesheet href="/css/home.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="big-margin">
+    <!-- <div class="big-margin"> -->
         <jsp:include page="navbar.jsp"/>
 
-        <div>
-            <div class="home">
-            <h1>Welcome Home ${user.firstName}</h1>
-        </div>
+        
+        
+        <h1 class="home">Welcome Home ${user.firstName}</h1>
+        
         
         <div class="homepage">
-  
         </div>
 
         <footer>
         CopyRight Area, Contact Us, Support
         </footer>
-    </div>
+    <!-- </div> -->
 </body>
 </html>

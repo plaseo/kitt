@@ -12,8 +12,8 @@
 <body>
     <jsp:include page="navbar.jsp"/>
 
-    <div>
-        <div class="availablecarsheader">
+    
+    <div class="availablecarsheader">
         <h1>Cars</h1>
     </div>    
 

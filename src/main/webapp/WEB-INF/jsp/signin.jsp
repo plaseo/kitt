@@ -12,6 +12,12 @@
 <body>
     
 <jsp:include page="navbar.jsp"/>
+
+<div class="signinheader">
+    <h1>Sign-In</h1>
+</div>
+
+
 <div class = "signinpage">
     <div class="signinbox">
         <form method="post" action="/signin">

@@ -3,9 +3,7 @@ package com.cardealer.models;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
-
 import com.cardealer.enums.BodyStyle;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -47,8 +45,8 @@ public class Car {
     @Column(name = "mileage")
     private double mileage;
     
-    @Column(name = "dateOfPurchase")
-    private LocalDate dateOfPurchase;
+    @Column(name = "dateAdded")
+    private LocalDate dateAdded;
 
     @Column(name = "dateSold")
     private LocalDate dateSold;
@@ -83,9 +81,11 @@ public class Car {
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     public List<Photo> photos;
 
+    @Column(name = "discountapplied")
+    private Boolean discountApplied;
 
     public Car(String manufacturerName, String model, int year, String color, String transmission, double mileage,
-            LocalDate dateOfPurchase, String description, String engineType, BodyStyle bodyStyle, double price,
+            String description, String engineType, BodyStyle bodyStyle, double price,
             boolean isAvailable, boolean isNew, String vin) {
         this.manufacturerName = manufacturerName;
         this.model = model;
@@ -93,7 +93,7 @@ public class Car {
         this.color = color;
         this.transmission = transmission;
         this.mileage = mileage;
-        this.dateOfPurchase = dateOfPurchase;
+    
         this.description = description;
         this.engineType = engineType;
         this.bodyStyle = bodyStyle;
@@ -103,6 +103,7 @@ public class Car {
         this.vin = vin;
     }
 
+    //empty constructor
     public Car(){
 
     }

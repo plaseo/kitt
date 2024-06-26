@@ -10,7 +10,10 @@
 </head>
 <body>
     
-    <jsp:include page ="navbar.jsp"/>
+    <jsp:include page ="navbar.jsp"/>   
+    <div class="signupheader">
+        <h1>Sign-Up</h1>
+    </div>
 
     <div class = "signuppage">
         <div class = "signupbox">
