@@ -11,11 +11,10 @@
 </head>
 <body>
     
-<jsp:include page="navbar.jsp"/>
+    <jsp:include page="navbar.jsp"/>
 
-<div class="signinheader">
-    <h1>Sign-In</h1>
-</div>
+    <h1 class="signinheader">Sign-In</h1>
+
 
 
 <div class = "signinpage">

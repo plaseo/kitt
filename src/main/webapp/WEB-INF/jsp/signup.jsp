@@ -11,9 +11,9 @@
 <body>
     
     <jsp:include page ="navbar.jsp"/>   
-    <div class="signupheader">
-        <h1>Sign-Up</h1>
-    </div>
+    
+    <h1 class="signupheader">Sign-Up</h1>
+    
 
     <div class = "signuppage">
         <div class = "signupbox">

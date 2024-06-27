@@ -29,14 +29,14 @@
 }
 
 .signupheader {
-    border:5px solid;
-    padding: 10px;
-    margin: 5px;
+    
+    border:4px solid #2ea44f;
     border-radius: 10px;
+    padding: 4px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-size: 22px;
     font-weight: bold;
-    border-color: #2ea44f;
+    text-align: center;
     background-color: rgb(9, 24, 19);
     color: white;
 

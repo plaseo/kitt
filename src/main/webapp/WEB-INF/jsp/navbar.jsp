@@ -30,14 +30,14 @@
 
         <c:choose>
             <c:when test="${sessionScope.userRole == 'BUYER'}">
-                <a href="#">User Profile</a>
-                <a href="#">Cart</a>
-                <a href="/logout">Logout</a>
+                <button class="navitem"><a href="#">User Profile</a></button>
+                <button class="navitem"><a href="#">Cart</a></button>
+                <button class="navitem"><a href="/logout">Logout</a></button>
             </c:when>
-            <c:when test="${sessionScope.userRole == 'BUYER'}">
-                <a href="/addcar">Add Car</a>
-                <a href="#">View Reports</a>
-                <a href="/logout">Logout</a>
+            <c:when test="${sessionScope.userRole == 'SELLER'}">
+                <button class="navitem"><a href="/addcar">Add Car</a></button>
+                <button class="navitem"><a href="#">View Reports</a></button>
+                <button class="navitem"><a href="/logout">Logout</a></button>
             </c:when>
         </c:choose>
 
