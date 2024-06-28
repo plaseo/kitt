@@ -11,11 +11,7 @@
 </head>
 <body>
     <jsp:include page="navbar.jsp"/>
-    
-    <div>
-        <div class="cardetailheader">
-        <h1>${car.year} ${car.manufacturerName} ${car.model}</h1>
-    </div>
+    <h1 class="cardetailheader">${car.year} ${car.manufacturerName} ${car.model}</h1>
 
   <div class="carouselsize">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
@@ -55,7 +51,7 @@
         <p>Mileage: ${car.mileage}</p>
         <p>Description: ${car.description}</p>
 
-        <a href="/add/${car.id}"><button></button></a>
+        <a href="/add/${car.id}"><button>Add To Cart</button></a>
         
     </div>
     

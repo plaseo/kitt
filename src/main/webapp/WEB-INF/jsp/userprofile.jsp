@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="/css/userprofile.css"/>
 </head>
 <body>
+<div class="masterdiv">
+
     <jsp:include page ="navbar.jsp"/>
+
     <h1 class="userprofileheader">${user.firstName} Profile</h1>
 
-    <p>${user.firstName}</p>
-    <p>${user.lastName}</p>
-    <p>${user.dateOfBirth}</p>
-    <p>${user.email}</p>
-    <p>${user.phoneNumber}</p>
+    <div class = "editprofilepage">
+        <div class="editprofile">
+            <p>${user.firstName}</p>
+            <p>${user.lastName}</p>
+            <p>${user.dateOfBirth}</p>
+            <p>${user.address}</p>
+            <p>${user.email}</p>
+            <p>${user.phoneNumber}</p>
+            <a href="/editprofile/${user. id}"><button class="submitbutton">Edit Profile</button></a>
+        </div>
+    </div>
 
-    <a href="/editprofile/${user. id}"><button>Edit Profile</button></a>
-
-
-
-
-
+</div>
 </body>
 </html>

@@ -13,20 +13,22 @@
 
     <!-- sessionScope accesses attributes that are stored in HttpSession object -->
 
-
-
     <div class = "nav">
         <button class="navitem"><a href="/" >Home</a></button>
         <button class="navitem"><a href="/cars" >Cars</a></button>
         
-
-
         <!-- we only want the signin and the signup to display if there is no user set in the session -->
         <!-- we use the test attribute inside of the if tag to do a conditional statement -->
         <c:if test="${empty sessionScope.user}">
         <button class="navitem"><a href="/signin" >Sign-In</a></button>
         <button class="navitem"><a href="/signup" >Sign-Up</a></button>
         </c:if>
+
+        
+            <c:if test="${sessionScope.isAdmin=='true'}">
+                <button><a>Edit Users</a></button>
+            </c:if>
+        
 
         <c:choose>
             <c:when test="${sessionScope.userRole == 'BUYER'}">
@@ -35,11 +37,14 @@
                 <!-- <button class="navitem"><a href="#">Cart</a></button> -->
                 <button class="navitem"><a href="/logout">Logout</a></button>
             </c:when>
+
             <c:when test="${sessionScope.userRole == 'SELLER'}">
                 <button class="navitem"><a href="/addcar">Add Car</a></button>
                 <button class="navitem"><a href="#">View Reports</a></button>
+                <button class="navitem"><a href="/userprofile">User Profile</a></button>
                 <button class="navitem"><a href="/logout">Logout</a></button>
             </c:when>
+
         </c:choose>
 
     </div>
