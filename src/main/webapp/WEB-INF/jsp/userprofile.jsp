@@ -12,8 +12,15 @@
 
     <p>${user.firstName}</p>
     <p>${user.lastName}</p>
+    <p>${user.dateOfBirth}</p>
     <p>${user.email}</p>
     <p>${user.phoneNumber}</p>
+
+    <a href="/editprofile/${user. id}"><button>Edit Profile</button></a>
+
+
+
+
 
 </body>
 </html>

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
 import com.cardealer.models.User;
 import com.cardealer.services.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -59,7 +61,6 @@ public class UserController {
             return "signin";
         }
 
-
     }
 
     @GetMapping("/logout")
@@ -67,7 +68,6 @@ public class UserController {
         //clear any data that is set in the session
         session.invalidate();
         return "signin";
-
 
     }
 
@@ -85,6 +85,23 @@ public class UserController {
     }
     //have to go to db to get use1r object of signed in user
     }
+
+    @GetMapping("/editprofile/{id}")
+    //retrieve the user object we want to edit from the database
+    //we want to pass that user object to the edit profile so we can edit
+    public String editProfile(@PathVariable Long id, Model model){
+        User user = userService.findUserById(id);
+        model.addAttribute("user", user);
+        return "editprofile";
+    }
+
+    @PostMapping("/editprofile")
+    public String updateProfile(@ModelAttribute User user, HttpSession session) {
+        User editedUser = userService.editProfile(user, session);
+        return "redirect:/userprofile";
+    }
+
+    
     
 
 }

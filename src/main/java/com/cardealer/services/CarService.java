@@ -32,7 +32,14 @@ public class CarService {
         Optional<Car> car = carRepository.findById(id);
         return car.get();
     }
-    
+
+    public Car addCar(Car car){
+        LocalDate currentDate = LocalDate.now();
+        car.setDateAdded(currentDate);
+        car.setDiscountApplied(false);
+        Car savedCar = carRepository.save(car);
+        return savedCar;
+    }
 
     public List<Car> discountedCars(List<Car> cars){
 

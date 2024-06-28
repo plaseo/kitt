@@ -54,6 +54,8 @@
         <p>Color: ${car.color}</p>
         <p>Mileage: ${car.mileage}</p>
         <p>Description: ${car.description}</p>
+
+        <a href="/add/${car.id}"><button></button></a>
         
     </div>
     

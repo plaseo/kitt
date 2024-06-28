@@ -1,12 +1,13 @@
 package com.cardealer.services;
 
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cardealer.enums.UserRole;
 import com.cardealer.models.User;
 import com.cardealer.repositories.UserRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Service
 public class UserService{
@@ -52,9 +53,26 @@ public class UserService{
         return user.get();
     }
 
+    public User editProfile(User user, HttpSession session) {
+        // HttpSession session;
+        User sessionUser = (User) session.getAttribute("user");
+        //go to the database and find the user that needs to be edited
+        User usertoedit = userRepository.findById(sessionUser.getId()).orElse(null);
+        //modify user data from editprofile page
+        usertoedit.setFirstName(user.getFirstName());
+        usertoedit.setLastName(user.getLastName());
+        usertoedit.setDateOfBirth(user.getDateOfBirth());
+        usertoedit.setAddress(user.getAddress());
+        usertoedit.setEmail(user.getEmail());
+        usertoedit.setPhoneNumber(user.getPhoneNumber());
 
+        //store the modified object in the user table
+        //when you modify and object before calling the save method in the repository
+        //  it will run an update SQL query 
+        User editedUser = userRepository.save(usertoedit);
+        return editedUser;
 
+    }
 
-    
 
 } 

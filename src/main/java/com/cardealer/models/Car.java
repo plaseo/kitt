@@ -1,6 +1,5 @@
 package com.cardealer.models;
 
-
 import java.time.LocalDate;
 import java.util.List;
 import com.cardealer.enums.BodyStyle;
@@ -12,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -84,8 +84,9 @@ public class Car {
     @Column(name = "discountapplied")
     private Boolean discountApplied;
 
+    @ManyToMany(mappedBy = "itemsInCart")
+    private List<Cart> carts;
    
-
     public Car(Long id, String manufacturerName, String model, int year, String color, String transmission,
             double mileage, LocalDate dateAdded, LocalDate dateSold, String description, String engineType,
             BodyStyle bodyStyle, double price, Boolean isAvailable, Boolean isNew, String vin, String photoUrl,
@@ -111,12 +112,10 @@ public class Car {
         this.discountApplied = discountApplied;
     }
 
-
-
     //empty constructor
     public Car(){
-
     }
+
     //possible constraints : nullable, unique, primary key, length
     
 }
