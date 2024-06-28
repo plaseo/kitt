@@ -65,10 +65,10 @@ public class Car {
     private double price;
     
     @Column(name = "isAvailable")
-    private boolean isAvailable;
+    private Boolean isAvailable;
     
     @Column(name = "isNew")
-    private boolean isNew;
+    private Boolean isNew;
     
     //possible constraints : nullable, unique, primary key, length
     @Column(name = "vin", unique=true, nullable = false)
@@ -84,16 +84,21 @@ public class Car {
     @Column(name = "discountapplied")
     private Boolean discountApplied;
 
-    public Car(String manufacturerName, String model, int year, String color, String transmission, double mileage,
-            String description, String engineType, BodyStyle bodyStyle, double price,
-            boolean isAvailable, boolean isNew, String vin) {
+   
+
+    public Car(Long id, String manufacturerName, String model, int year, String color, String transmission,
+            double mileage, LocalDate dateAdded, LocalDate dateSold, String description, String engineType,
+            BodyStyle bodyStyle, double price, Boolean isAvailable, Boolean isNew, String vin, String photoUrl,
+            List<Photo> photos, Boolean discountApplied) {
+        this.id = id;
         this.manufacturerName = manufacturerName;
         this.model = model;
         this.year = year;
         this.color = color;
         this.transmission = transmission;
         this.mileage = mileage;
-    
+        this.dateAdded = dateAdded;
+        this.dateSold = dateSold;
         this.description = description;
         this.engineType = engineType;
         this.bodyStyle = bodyStyle;
@@ -101,7 +106,12 @@ public class Car {
         this.isAvailable = isAvailable;
         this.isNew = isNew;
         this.vin = vin;
+        this.photoUrl = photoUrl;
+        this.photos = photos;
+        this.discountApplied = discountApplied;
     }
+
+
 
     //empty constructor
     public Car(){

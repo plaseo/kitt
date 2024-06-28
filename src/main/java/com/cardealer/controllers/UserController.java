@@ -5,11 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import com.cardealer.models.User;
 import com.cardealer.services.UserService;
-
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -61,7 +60,6 @@ public class UserController {
         }
 
 
-
     }
 
     @GetMapping("/logout")
@@ -71,6 +69,21 @@ public class UserController {
         return "signin";
 
 
+    }
+
+    @GetMapping("/userprofile")
+    public String userProfile(HttpSession session, Model model){    
+    //get the object of the signed in user from the session    
+    User sessionUser = (User) session.getAttribute("user");
+    //persist our object from the database
+    User user = userService.findUserById(sessionUser.getId());
+    if(user == null){
+        return "signin";
+    }else{
+        model.addAttribute("user", user);
+        return "userprofile";
+    }
+    //have to go to db to get use1r object of signed in user
     }
     
 

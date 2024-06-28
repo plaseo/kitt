@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/signin.css"/>
 </head>
 <body>
-    
+<div class="masterdiv"> 
     <jsp:include page="navbar.jsp"/>
 
     <h1 class="signinheader">Sign-In</h1>
@@ -34,6 +34,6 @@
     </div>
 </div>
 
-
+</div>
 </body>
 </html>

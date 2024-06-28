@@ -20,7 +20,7 @@ public class CarService {
         List<Car> allCars = carRepository.findAll();
         List<Car> availableCars = new ArrayList<>();
         for(Car car: allCars){
-            if (car.isAvailable()) {
+            if(car.getIsAvailable()){
                 availableCars.add(car);
             }
         }
@@ -31,15 +31,8 @@ public class CarService {
     public Car findCarById(Long id){
         Optional<Car> car = carRepository.findById(id);
         return car.get();
-
     }
     
-    public Car addCar(Car car){
-        LocalDate currentDate = LocalDate.now();
-        car.setDateAdded(currentDate);
-        Car savedCar = carRepository.save(car);
-        return savedCar;
-    }
 
     public List<Car> discountedCars(List<Car> cars){
 
@@ -61,6 +54,10 @@ public class CarService {
         }
         return cars;
 
+    }
+    public List<Car> findCarByModel(String model) {
+        List<Car> cars = carRepository.findCarByModel(model);
+        return cars;
     }
     
 }

@@ -35,12 +35,12 @@
             <label>Engine Type</label><br>
             <input type="text" name="engineType"/><br>
             <label>Body Style</label><br>
-            <select>
-                <option value="BodyStyle.SEDAN">SEDAN</option>
-                <option value="BodyStyle.HATCHBACK">HATCHBACK</option>
-                <option value="BodyStyle.SUV">SUV</option>
-                <option value="BodyStyle.CONVERTIBLE">CONVERTIBLE</option>
-                <option value="BodyStyle.COUPE">COUPE</option>
+            <select name="bodyStyle">
+                <option value="SEDAN">SEDAN</option>
+                <option value="HATCHBACK">HATCHBACK</option>
+                <option value="SUV">SUV</option>
+                <option value="CONVERTIBLE">CONVERTIBLE</option>
+                <option value="COUPE">COUPE</option>
             </select><br>
             <label>Price</label><br>
             <input type="number" name="price"/><br>
