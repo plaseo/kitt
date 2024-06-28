@@ -18,12 +18,15 @@
         <h1 class="home">Welcome Home ${user.firstName}</h1>
         
         
-        <div class="homepage">
-        </div>
+        <div class="homepage"></div>
+        
 
+    <div>
         <footer>
         CopyRight Area, Contact Us, Support
         </footer>
+    </div>
+    
 </div>
 </body>
 </html>
