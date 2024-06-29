@@ -1,4 +1,4 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+s<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,8 +36,8 @@
 
 <div class="carpage">
 
-<c:forEach var ="car" items="${availableCars}">
-<div class="caritems">
+    <c:forEach var ="car" items="${availableCars}">
+    <div class="caritems">
     <a href="/cardetails/${car.id}">
         <img src="${car.photoUrl}" />
         <p>${car.manufacturerName}</p>
@@ -52,7 +52,7 @@
 
 
 
-    </div>
+    
 </div>
 </body>
 </html>
