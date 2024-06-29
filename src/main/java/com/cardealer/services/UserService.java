@@ -1,17 +1,13 @@
 package com.cardealer.services;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-
 import com.cardealer.enums.UserRole;
-import com.cardealer.models.Car;
 import com.cardealer.models.User;
 import com.cardealer.repositories.UserRepository;
-
 import jakarta.servlet.http.HttpSession;
 
 @Service
