@@ -76,6 +76,14 @@
       "oAP" : "\/kitt.code-workspace",
       "oF" : 0
     },
+    "\/kittcolors.txt" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/kittcolors.txt",
+      "oF" : 0
+    },
     "\/mvnw" : {
       "cB" : 0,
       "ft" : 8192,
@@ -135,6 +143,14 @@
       "oAP" : "\/src\/main\/java\/com\/cardealer\/controllers\/CarController.java",
       "oF" : 0
     },
+    "\/src\/main\/java\/com\/cardealer\/controllers\/CartController.java" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/java\/com\/cardealer\/controllers\/CartController.java",
+      "oF" : 0
+    },
     "\/src\/main\/java\/com\/cardealer\/controllers\/UserController.java" : {
       "cB" : 0,
       "ft" : 8192,
@@ -181,6 +197,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/src\/main\/java\/com\/cardealer\/models\/Car.java",
+      "oF" : 0
+    },
+    "\/src\/main\/java\/com\/cardealer\/models\/Cart.java" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/java\/com\/cardealer\/models\/Cart.java",
+      "oF" : 0
+    },
+    "\/src\/main\/java\/com\/cardealer\/models\/Photo.java" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/java\/com\/cardealer\/models\/Photo.java",
       "oF" : 0
     },
     "\/src\/main\/java\/com\/cardealer\/models\/Transaction.java" : {
@@ -239,6 +271,14 @@
       "oAP" : "\/src\/main\/java\/com\/cardealer\/services\/CarService.java",
       "oF" : 0
     },
+    "\/src\/main\/java\/com\/cardealer\/services\/CartService.java" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/java\/com\/cardealer\/services\/CartService.java",
+      "oF" : 0
+    },
     "\/src\/main\/java\/com\/cardealer\/services\/UserService.java" : {
       "cB" : 0,
       "ft" : 8192,
@@ -255,6 +295,32 @@
       "oAP" : "\/src\/main\/resources\/application.properties",
       "oF" : 0
     },
+    "\/src\/main\/resources\/avatars\/single_5509346.png" : {
+      "ft" : 32768,
+      "iS" : 20780,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/avatars\/single_5509346.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/src\/main\/resources\/avatars\/Untitled.png" : {
+      "ft" : 32768,
+      "iS" : 44047,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/avatars\/Untitled.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/src\/main\/resources\/images\/nissanbackground.jpg" : {
       "ft" : 16384,
       "iS" : 862237,
@@ -267,6 +333,66 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/src\/main\/resources\/static\/css\/addcar.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/static\/css\/addcar-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/src\/main\/resources\/static\/css\/availablecars.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/static\/css\/availablecars-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/src\/main\/resources\/static\/css\/availableusers.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/static\/css\/availableusers-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/src\/main\/resources\/static\/css\/cardetails.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/static\/css\/cardetails-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/src\/main\/resources\/static\/css\/editprofile.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/static\/css\/editprofile-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/src\/main\/resources\/static\/css\/home.css" : {
       "aP" : 1,
@@ -316,12 +442,64 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/src\/main\/resources\/static\/css\/userprofile.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/resources\/static\/css\/userprofile-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/addcar.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/addcar.jsp",
+      "oF" : 0
+    },
     "\/src\/main\/webapp\/WEB-INF\/jsp\/availablecars.jsp" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/availablecars.jsp",
+      "oF" : 0
+    },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/availableusers.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/availableusers.jsp",
+      "oF" : 0
+    },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/cardetails.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/cardetails.jsp",
+      "oF" : 0
+    },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/cart.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/cart.jsp",
+      "oF" : 0
+    },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/editprofile.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/editprofile.jsp",
       "oF" : 0
     },
     "\/src\/main\/webapp\/WEB-INF\/jsp\/home.jsp" : {
@@ -356,6 +534,22 @@
       "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/signup.jsp",
       "oF" : 0
     },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/userdetails.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/userdetails.jsp",
+      "oF" : 0
+    },
+    "\/src\/main\/webapp\/WEB-INF\/jsp\/userprofile.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/src\/main\/webapp\/WEB-INF\/jsp\/userprofile.jsp",
+      "oF" : 0
+    },
     "\/src\/test\/java\/com\/cardealer\/kitt\/KittApplicationTests.java" : {
       "cB" : 0,
       "ft" : 8192,
@@ -372,6 +566,32 @@
       "oAP" : "\/target\/classes\/application.properties",
       "oF" : 0
     },
+    "\/target\/classes\/avatars\/single_5509346.png" : {
+      "ft" : 32768,
+      "iS" : 20780,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/avatars\/single_5509346.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/target\/classes\/avatars\/Untitled.png" : {
+      "ft" : 32768,
+      "iS" : 44047,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/avatars\/Untitled.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/target\/classes\/com\/cardealer\/config\/ApplicationConfig.class" : {
       "cB" : 0,
       "ft" : 8192,
@@ -386,6 +606,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/target\/classes\/com\/cardealer\/controllers\/CarController.class",
+      "oF" : 0
+    },
+    "\/target\/classes\/com\/cardealer\/controllers\/CartController.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/com\/cardealer\/controllers\/CartController.class",
       "oF" : 0
     },
     "\/target\/classes\/com\/cardealer\/controllers\/UserController.class" : {
@@ -436,6 +664,22 @@
       "oAP" : "\/target\/classes\/com\/cardealer\/models\/Car.class",
       "oF" : 0
     },
+    "\/target\/classes\/com\/cardealer\/models\/Cart.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/com\/cardealer\/models\/Cart.class",
+      "oF" : 0
+    },
+    "\/target\/classes\/com\/cardealer\/models\/Photo.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/com\/cardealer\/models\/Photo.class",
+      "oF" : 0
+    },
     "\/target\/classes\/com\/cardealer\/models\/Transaction.class" : {
       "cB" : 0,
       "ft" : 8192,
@@ -484,6 +728,14 @@
       "oAP" : "\/target\/classes\/com\/cardealer\/services\/CarService.class",
       "oF" : 0
     },
+    "\/target\/classes\/com\/cardealer\/services\/CartService.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/com\/cardealer\/services\/CartService.class",
+      "oF" : 0
+    },
     "\/target\/classes\/com\/cardealer\/services\/UserService.class" : {
       "cB" : 0,
       "ft" : 8192,
@@ -504,6 +756,66 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/target\/classes\/static\/css\/addcar.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/static\/css\/addcar-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/classes\/static\/css\/availablecars.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/static\/css\/availablecars-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/classes\/static\/css\/availableusers.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/static\/css\/availableusers-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/classes\/static\/css\/cardetails.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/static\/css\/cardetails-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/classes\/static\/css\/editprofile.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/static\/css\/editprofile-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/target\/classes\/static\/css\/home.css" : {
       "aP" : 1,
@@ -553,6 +865,18 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/target\/classes\/static\/css\/userprofile.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/classes\/static\/css\/userprofile-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/target\/kitt-0.0.1-SNAPSHOT.war" : {
       "cB" : 0,
       "ft" : 8192,
@@ -577,6 +901,32 @@
       "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/application.properties",
       "oF" : 0
     },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/avatars\/single_5509346.png" : {
+      "ft" : 32768,
+      "iS" : 20780,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/avatars\/single_5509346.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/avatars\/Untitled.png" : {
+      "ft" : 32768,
+      "iS" : 44047,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/avatars\/Untitled.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/config\/ApplicationConfig.class" : {
       "cB" : 0,
       "ft" : 8192,
@@ -591,6 +941,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/controllers\/CarController.class",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/controllers\/CartController.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/controllers\/CartController.class",
       "oF" : 0
     },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/controllers\/UserController.class" : {
@@ -641,6 +999,22 @@
       "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/models\/Car.class",
       "oF" : 0
     },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/models\/Cart.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/models\/Cart.class",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/models\/Photo.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/models\/Photo.class",
+      "oF" : 0
+    },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/models\/Transaction.class" : {
       "cB" : 0,
       "ft" : 8192,
@@ -689,6 +1063,14 @@
       "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/services\/CarService.class",
       "oF" : 0
     },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/services\/CartService.class" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/services\/CartService.class",
+      "oF" : 0
+    },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/com\/cardealer\/services\/UserService.class" : {
       "cB" : 0,
       "ft" : 8192,
@@ -709,6 +1091,66 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/addcar.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/addcar-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/availablecars.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/availablecars-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/availableusers.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/availableusers-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/cardetails.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/cardetails-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/editprofile.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/editprofile-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/home.css" : {
       "aP" : 1,
@@ -758,12 +1200,64 @@
       "oF" : 0,
       "pg" : 0
     },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/userprofile.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/classes\/static\/css\/userprofile-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/addcar.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/addcar.jsp",
+      "oF" : 0
+    },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/availablecars.jsp" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/availablecars.jsp",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/availableusers.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/availableusers.jsp",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/cardetails.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/cardetails.jsp",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/cart.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/cart.jsp",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/editprofile.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/editprofile.jsp",
       "oF" : 0
     },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/home.jsp" : {
@@ -796,6 +1290,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/signup.jsp",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/userdetails.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/userdetails.jsp",
+      "oF" : 0
+    },
+    "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/userprofile.jsp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/jsp\/userprofile.jsp",
       "oF" : 0
     },
     "\/target\/kitt-0.0.1-SNAPSHOT\/WEB-INF\/lib\/angus-activation-2.0.2.jar" : {

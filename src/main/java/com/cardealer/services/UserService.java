@@ -3,11 +3,14 @@ package com.cardealer.services;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.cardealer.enums.UserRole;
 import com.cardealer.models.User;
 import com.cardealer.repositories.UserRepository;
+
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -77,5 +80,27 @@ public class UserService{
     public List<User> findAllUsers() {
         List<User> findAllUsers = userRepository.findAll();
         return findAllUsers;
+    }
+    public User editUser(User user) {
+        // HttpSession session;
+        //go to the database and find the user that needs to be edited
+        //modify user data from editprofile page
+        
+        user.setFirstName(user.getFirstName());
+        user.setLastName(user.getLastName());
+        user.setDateOfBirth(user.getDateOfBirth());
+        user.setAddress(user.getAddress());
+        user.setEmail(user.getEmail());
+        user.setPassword(user.getPassword());
+        user.setPhoneNumber(user.getPhoneNumber());
+        user.setRole(user.getRole());
+        user.setIsAdmin(user.getIsAdmin());
+        //store the modified object in the user table
+        //when you modify and object before calling the save method in the repository
+        //  it will run an update SQL query 
+        
+        User editedUser = userRepository.save(user);
+        return editedUser;
+
     }
 }

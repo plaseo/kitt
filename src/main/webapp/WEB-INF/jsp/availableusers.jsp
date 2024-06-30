@@ -16,7 +16,7 @@
     <c:forEach var ="user" items="${availableUsers}">
         <div class="useritems">
         <a href="userdetails/${user.id}">
-        <t>First Name: ${user.firstName}</p>
+        <p>First Name: ${user.firstName}</p>
         <p>DOB: ${user.dateOfBirth}</p>
         <p>Address: ${user.address}</p>
         <p>Email: ${user.email}</p>
