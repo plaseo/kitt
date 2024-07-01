@@ -113,9 +113,9 @@ public class UserController {
         model.addAttribute("user", user);
         return "userdetails";
     }
-    @PostMapping("/userdetails")
-    public String editUser(@ModelAttribute User user) {
-        User editedUser = userService.editUser(user);
+    @PostMapping("/userdetails/{id}")
+    public String editUser(@ModelAttribute User user, @PathVariable Long id) {
+        User editedUser = userService.editUser(user, id);
         return "redirect:/availableusers";
     }
 

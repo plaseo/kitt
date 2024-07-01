@@ -2,7 +2,6 @@ package com.cardealer.models;
 
 import jakarta.persistence.Table;
 import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 import jakarta.persistence.Entity;
@@ -28,8 +27,11 @@ public class Cart {
 
     @ManyToMany
     @JoinTable(
+        //the table that's created by joining
         name = "carsincart",
+        //primary key of the first referenced table
         joinColumns = @JoinColumn(name = "cart_id", referencedColumnName = "id"),
+        //primary key of the other table, ie the collection you've declared to represent
         inverseJoinColumns = @JoinColumn(name = "car_id", referencedColumnName = "id")
     )
     private List<Car> itemsInCart = new ArrayList<>();

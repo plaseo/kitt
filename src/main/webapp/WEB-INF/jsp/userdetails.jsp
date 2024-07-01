@@ -9,7 +9,7 @@
     <h1>Edit ${user.firstName} ${user.lastName}</h1>
 
     <div class="edituserbox">
-        <form method="post" action="/userdetails">
+        <form method="post" action="/userdetails/${user.id}">
             <label>First Name</label> <br>
             <input type="text" name="firstName" value="${user.firstName}" /> <br>
             <label>Last Name</label><br>

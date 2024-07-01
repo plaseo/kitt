@@ -81,26 +81,18 @@ public class UserService{
         List<User> findAllUsers = userRepository.findAll();
         return findAllUsers;
     }
-    public User editUser(User user) {
-        // HttpSession session;
-        //go to the database and find the user that needs to be edited
-        //modify user data from editprofile page
-        
-        user.setFirstName(user.getFirstName());
-        user.setLastName(user.getLastName());
-        user.setDateOfBirth(user.getDateOfBirth());
-        user.setAddress(user.getAddress());
-        user.setEmail(user.getEmail());
-        user.setPassword(user.getPassword());
-        user.setPhoneNumber(user.getPhoneNumber());
-        user.setRole(user.getRole());
-        user.setIsAdmin(user.getIsAdmin());
-        //store the modified object in the user table
-        //when you modify and object before calling the save method in the repository
-        //  it will run an update SQL query 
-        
-        User editedUser = userRepository.save(user);
+    public User editUser(User user, Long id) {
+        User foundUser = userRepository.findById(id).orElse(null);
+        foundUser.setFirstName(user.getFirstName());
+        foundUser.setLastName(user.getLastName());
+        foundUser.setDateOfBirth(user.getDateOfBirth());
+        foundUser.setAddress(user.getAddress());
+        foundUser.setEmail(user.getEmail());
+        foundUser.setPassword(user.getPassword());
+        foundUser.setPhoneNumber(user.getPhoneNumber());
+        foundUser.setRole(user.getRole());
+        foundUser.setIsAdmin(user.getIsAdmin());
+        User editedUser = userRepository.save(foundUser);
         return editedUser;
-
     }
 }

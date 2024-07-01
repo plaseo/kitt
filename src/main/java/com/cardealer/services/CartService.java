@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import com.cardealer.models.Car;
 import com.cardealer.models.Cart;
 import com.cardealer.repositories.CarRepository;
-
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -17,7 +16,6 @@ public class CartService {
     public Cart getCart(HttpSession session) {
         //get cart previously set in the user session
         Cart cart = (Cart) session.getAttribute("cart");
-
         //check if any cart was previously set in the user session
         if (cart == null) {
             //initialize a new cart
@@ -26,7 +24,6 @@ public class CartService {
             session.setAttribute("cart", cart);
         }
         return cart;
-
     }
 
     //add to cart
@@ -39,9 +36,7 @@ public class CartService {
         if(carToAdd != null) {
             ///add our items in the cart list
             cart.getItemsInCart().add(carToAdd);
-
         }
-
     }
-    
+
 }
