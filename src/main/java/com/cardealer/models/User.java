@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -45,6 +46,10 @@ public class User {
     @Column(name = "phoneNumber")
     private String phoneNumber;
 
+    @OneToOne
+    @JoinColumn(name = "cart_id", referencedColumnName = "id")
+    private Cart cart;
+
     // @Column(name = "role")
     // private UserRole role;
 
@@ -62,20 +67,20 @@ public class User {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Car> cars;
 
-    public User(Long id, String firstName, String lastName, LocalDate dateOfBirth, String address, String email,
-            String password, String phoneNumber, UserRole role, Boolean isAdmin, List<Car> cars) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-        this.address = address;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.role = role;
-        this.isAdmin = isAdmin;
-        this.cars = cars;
-    }
+    // public User(Long id, String firstName, String lastName, LocalDate dateOfBirth, String address, String email,
+    //         String password, String phoneNumber, UserRole role, Boolean isAdmin, List<Car> cars) {
+    //     this.id = id;
+    //     this.firstName = firstName;
+    //     this.lastName = lastName;
+    //     this.dateOfBirth = dateOfBirth;
+    //     this.address = address;
+    //     this.email = email;
+    //     this.password = password;
+    //     this.phoneNumber = phoneNumber;
+    //     this.role = role;
+    //     this.isAdmin = isAdmin;
+    //     this.cars = cars;
+    // }
     public User(){
 
     }

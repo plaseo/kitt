@@ -51,7 +51,7 @@
         <p>Mileage: ${car.mileage}</p>
         <p>Description: ${car.description}</p>
 
-        <a href="/add/${car.id}"><button>Add To Cart</button></a>
+        <a href="/cart/add/${car.id}"><button>Add To Cart</button></a>
         
     </div>
     

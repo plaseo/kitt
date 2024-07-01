@@ -1,16 +1,12 @@
 package com.cardealer.services;
 
-
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.cardealer.enums.UserRole;
 import com.cardealer.models.User;
 import com.cardealer.repositories.UserRepository;
-
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -69,7 +65,6 @@ public class UserService{
         usertoedit.setAddress(user.getAddress());
         usertoedit.setEmail(user.getEmail());
         usertoedit.setPhoneNumber(user.getPhoneNumber());
-
         //store the modified object in the user table
         //when you modify and object before calling the save method in the repository
         //  it will run an update SQL query 
