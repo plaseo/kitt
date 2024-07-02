@@ -1,4 +1,4 @@
-s<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +12,7 @@ s<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 </head>
 
 <body>
-<div class="masterdiv">    
+<div class="masterdiv">
     <jsp:include page="navbar.jsp"/>
     <h1 class="availablecarsheader">Cars</h1>
 

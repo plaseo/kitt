@@ -77,6 +77,9 @@ public class Car {
     @Column(name = "photoUrl")
     public String photoUrl;
 
+    @Column(name="stripepriceid")
+    public String stripePriceId;
+
     @OneToMany
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     public List<Photo> photos;

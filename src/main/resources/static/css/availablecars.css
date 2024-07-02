@@ -45,6 +45,7 @@
 }
 
 .masterdiv {
-    background-color: rgb(19, 19, 17)
+    background-color: rgb(19, 19, 17);
+    min-height: 100%;
 }
 
