@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -89,6 +90,10 @@ public class Car {
 
     @ManyToMany(mappedBy = "itemsInCart")
     private List<Cart> carts;
+
+    @ManyToOne
+    @JoinColumn(name = "transaction_id", referencedColumnName = "id")
+    private Transaction transaction;
    
     public Car(Long id, String manufacturerName, String model, int year, String color, String transmission,
             double mileage, LocalDate dateAdded, LocalDate dateSold, String description, String engineType,

@@ -42,7 +42,7 @@ public class Transaction {
     private double tax;
 
     @Column(name = "totalAmount")
-    private BigDecimal totalAmount;
+    private double totalAmount;
 
     
 
