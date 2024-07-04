@@ -54,7 +54,7 @@
             <input type="url" name="photoUrl"/> <br>
             <label>Photos</label><br>
             <input /><br>
-            <button type="submit">Submit</button>
+            <button class="addcarbutton" type="submit">Submit</button>
         </form>
     </div>
 </div>   

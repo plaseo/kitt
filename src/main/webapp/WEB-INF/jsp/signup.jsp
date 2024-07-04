@@ -32,7 +32,7 @@
         <label>Password</label> <br>
         <input type ="password" name ="password" /> <br>
 
-        <button type = "submit">Sign-Up</button>
+        <button class="signupbutton" type = "submit">Sign-Up</button>
 
     </form>
 

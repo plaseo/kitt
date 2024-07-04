@@ -12,47 +12,50 @@
 </head>
 
 <body>
-<div class="masterdiv">
+
     <jsp:include page="navbar.jsp"/>
     <h1 class="availablecarsheader">Cars</h1>
 
-    <div class="availablecarsheader">
-    <form method="get" action="/searchmodel">
-        <input class="availablecarsheader" type="text" name="model" placeholder="Enter car model"/>
-        <button class="availablecarsheader" type="submit">Search</button>
-    </form>
-    </div>
-
-    <div class="availablecarsheader">
-    <form>
-        <label class="availablecarsheader">Price</label>
-        <select name="price">
-            <option class="availablecarsheader">Lowest to Highest</option>
-            <option class="availablecarsheader">Highest to Lowest</option>
-        </select>
-    </form>
+    <div class="container">
+        <div>
+            <div class="carfilter">
+                <form>
+                    <label class="carfilter">Sort By Price</label>
+                    <select class="searchbutton" name="price">
+                        <option class="searchbutton">Lowest to Highest</option>
+                        <option class="searchbutton">Highest to Lowest</option>
+                    </select>   
+                </form>
+                </div>
+        </div>
+        <div>
+            <div class="carfilter">
+                <form method="get" action="/searchmodel">
+                    <input class="" type="text" name="model" placeholder="Enter car model"/>
+                    <button class="searchbutton" type="submit">Search</button>
+                </form>
+                </div>
+        </div>
     </div>
     
+    
 
-<div class="carpage">
-
-    <c:forEach var ="car" items="${availableCars}">
-    <div class="caritems">
-    <a href="/cardetails/${car.id}">
-        <img src="${car.photoUrl}" />
-        <p>${car.manufacturerName}</p>
-        <p>${car.model}</p>
-        <p>$${car.price}</p>
-        <p>${car.year}</p>
-        <p>${car.color}</p>
-
-    </a>
+    <div class="carpage">
+        <c:forEach var ="car" items="${availableCars}">
+            <div class="caritems">
+                <a href="/cardetails/${car.id}">
+                    <img src="${car.photoUrl}" />
+                    <p>${car.manufacturerName}</p>
+                    <p>${car.model}</p>
+                    <p>$${car.price}</p>
+                    <p>${car.year}</p>
+                    <p>${car.color}</p>
+                </a>
+            </div>
+        </c:forEach>
     </div>
-    </c:forEach>
-
-
 
     
-</div>
+
 </body>
 </html>

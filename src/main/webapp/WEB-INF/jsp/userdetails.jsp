@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/userdetails.css"/>
 </head>
 <body>
-    <h1>Edit ${user.firstName} ${user.lastName}</h1>
-
+    <jsp:include page="navbar.jsp"/>
+    <h1 class="userdetailsheader">Edit ${user.firstName} ${user.lastName}</h1>
+<div class="flexbox">
     <div class="edituserbox">
         <form method="post" action="/userdetails/${user.id}">
             <label>First Name</label> <br>
@@ -31,6 +33,7 @@
             <button class="submitbutton">Submit</button>
         </form>
     </div>
+</div>
 
 </body>
 </html>

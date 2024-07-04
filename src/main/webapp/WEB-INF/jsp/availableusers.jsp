@@ -10,19 +10,21 @@
 <body>
 <div class="masterdiv">
 <jsp:include page="navbar.jsp"/>
-<h1>HELLO!!</h1>
+<h1 class="availableusersheader">Available Users</h1>
 
     <div class="availableuserspage">
+    
     <c:forEach var ="user" items="${availableUsers}">
         <div class="useritems">
         <a href="userdetails/${user.id}">
-        <p>First Name: ${user.firstName}</p>
-        <p>DOB: ${user.dateOfBirth}</p>
-        <p>Address: ${user.address}</p>
-        <p>Email: ${user.email}</p>
-        <p>Phone: ${user.phoneNumber}</p>
-        <p>Role: ${user.role}</p>
-        <p>Admin: ${user.isAdmin}</p>
+        <p class="userinfo"><em>First Name:</em> ${user.firstName}</p>
+        <p class="userinfo"><em>Last Name:</em> ${user.lastName}</p>
+        <p class="userinfo"><em>DOB:</em> ${user.dateOfBirth}</p>
+        <p class="userinfo"><em>Address:</em> ${user.address}</p>
+        <p class="userinfo"><em>Email:</em> ${user.email}</p>
+        <p class="userinfo"><em>Phone:</em> ${user.phoneNumber}</p>
+        <p class="userinfo"><em>Role:</em> ${user.role}</p>
+        <p class="userinfo"><em>Admin:</em> ${user.isAdmin}</p>
         </a>
         
     </div>

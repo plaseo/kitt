@@ -10,30 +10,39 @@
     <link rel="stylesheet" href="/css/signin.css"/>
 </head>
 <body>
-<div class="masterdiv"> 
     <jsp:include page="navbar.jsp"/>
 
     <h1 class="signinheader">Sign-In</h1>
 
 
 
-<div class = "signinpage">
-    <div class="signinbox">
-        <form method="post" action="/signin">
-        <c:if test="${not empty errorMessage}">
-            <div>${errorMessage}</div>
-        </c:if>
-            <label>Email</label> <br>
-            <input type = "email" name="email"/> <br>
-            <label>Password</label> <br>
-            <input type="password" name="password" /> <br>
-            <a>Forgot Password?</a> <br>
-            <a>Forgot Username?</a> <br>
-            <button type="submit">Sign In</button>
-        </form>
+    <div class = "signinpage">
+        <div class="signinbox">
+            <form method="post" action="/signin">
+            <c:if test="${not empty errorMessage}">
+                <div>${errorMessage}</div>
+            </c:if>
+                <label>Email</label> <br>
+                <input type = "email" name="email"/> <br>
+                <label>Password</label> <br>
+                <input type="password" name="password" /> <br>
+                <a>Forgot Password?</a> <br>
+                <a>Forgot Username?</a> <br>
+                <button class="signinbutton" type="submit">Sign In</button>
+            </form>
+        </div>
     </div>
-</div>
 
-</div>
+    <div class="map">
+        <h1>hello!</h1>
+        <gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID" style="width: 400px; height: 400px; align-content: center;"></gmp-map>
+
+    </div>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=INSERTKEY&loading=async&libraries=maps,marker&v=beta" defer>
+    </script>
+      
+
 </body>
 </html>
