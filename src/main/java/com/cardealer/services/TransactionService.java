@@ -3,7 +3,6 @@ package com.cardealer.services;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cardealer.models.Car;
@@ -25,9 +24,7 @@ public class TransactionService {
 
     public boolean createTransaction(Cart cart, HttpSession session){
         User sessionUser = (User) session.getAttribute("user");
-        for(Car car: cart.getItemsInCart()){
-            car.setIsAvailable(false);
-        }
+        
         Transaction transaction = new Transaction();
         transaction.setDate(LocalDate.now());
         transaction.setUser(sessionUser);    
@@ -52,5 +49,11 @@ public class TransactionService {
         }
         return total;
     }
+
+    public List<Transaction> getAllTransactions() {
+        List<Transaction> allTransactions = transactionRepository.findAll();
+        return allTransactions;
+    }
+
     
 }

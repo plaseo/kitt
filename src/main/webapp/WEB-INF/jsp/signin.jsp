@@ -14,8 +14,6 @@
 
     <h1 class="signinheader">Sign-In</h1>
 
-
-
     <div class = "signinpage">
         <div class="signinbox">
             <form method="post" action="/signin">
@@ -53,7 +51,7 @@
 
     </div>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=${maps.apiKey}&loading=async&libraries=maps,marker&v=beta" defer>
+        src="https://maps.googleapis.com/maps/api/js?key=INSERTKEY&loading=async&libraries=maps,marker&v=beta" defer>
     </script>
       
 

@@ -43,7 +43,7 @@
 
             <c:when test="${sessionScope.userRole == 'SELLER'}">
                 <button class="navitem"><a href="/addcar">Add Car</a></button>
-                <button class="navitem"><a href="#">View Reports</a></button>
+                <button class="navitem"><a href="/transactions">View Reports</a></button>
                 <button class="navitem"><a href="/userprofile">User Profile</a></button>
                 <button class="navitem"><a href="/logout">Logout</a></button>
             </c:when>

@@ -31,7 +31,7 @@ public class Transaction {
     private List<Car> items;
 
     @ManyToOne
-    @JoinColumn(name = "user_ud", referencedColumnName = "id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
     @Column(name = "date")
@@ -42,9 +42,6 @@ public class Transaction {
 
     @Column(name = "totalAmount")
     private double totalAmount;
-
-    
-
 }
 
 

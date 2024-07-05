@@ -48,7 +48,8 @@ public class CarController {
     public String searchCarByModel(@RequestParam("model") String carModel, Model model){
         List<Car> cars = carService.findCarByModel(carModel);
         model.addAttribute("availableCars", cars);
-        return "/availablecars";
+        return "availablecars";
     }
+
 }
 
