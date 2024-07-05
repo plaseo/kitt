@@ -40,14 +40,14 @@ body {
 }
 
 .userinfo {
-    border:2px solid;
+    border: 1px solid;  
     padding: 5px;
     margin: 2px;
     border-radius: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
     font-weight: bold;
-    border-color: rgb(64, 166, 250);
+    border-color: rgba(64, 166, 250, 0.500);
     color: white;
     background-color: rgb(9, 24, 19);
     text-align: center;

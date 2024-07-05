@@ -35,12 +35,25 @@
 
     <div class="map">
         <h1>hello!</h1>
-        <gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID" style="width: 400px; height: 400px; align-content: center;"></gmp-map>
+        <gmp-map
+  center="43.4142989,-124.2301242"
+  zoom="4"
+  map-id="DEMO_MAP_ID"
+  style="height: 400px"
+>
+  <gmp-advanced-marker
+    position="37.4220656,-122.0840897"
+    title="Mountain View, CA"
+  ></gmp-advanced-marker>
+  <gmp-advanced-marker
+    position="47.648994,-122.3503845"
+    title="Seattle, WA"
+  ></gmp-advanced-marker>
+</gmp-map>
 
     </div>
-
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=INSERTKEY&loading=async&libraries=maps,marker&v=beta" defer>
+        src="https://maps.googleapis.com/maps/api/js?key=${maps.apiKey}&loading=async&libraries=maps,marker&v=beta" defer>
     </script>
       
 
