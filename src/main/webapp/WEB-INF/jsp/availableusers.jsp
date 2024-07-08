@@ -8,28 +8,35 @@
     <link rel="stylesheet" href="/css/availableusers.css"/>
 </head>
 <body>
-<div class="masterdiv">
-<jsp:include page="navbar.jsp"/>
-<h1 class="availableusersheader">Available Users</h1>
+    <jsp:include page="navbar.jsp"/>
+    <h1 class="availableusersheader">Available Users</h1>
 
     <div class="availableuserspage">
-    
-    <c:forEach var ="user" items="${availableUsers}">
-        <div class="useritems">
-        <a href="userdetails/${user.id}">
-        <p class="userinfo"><em>First Name:</em> ${user.firstName}</p>
-        <p class="userinfo"><em>Last Name:</em> ${user.lastName}</p>
-        <p class="userinfo"><em>DOB:</em> ${user.dateOfBirth}</p>
-        <p class="userinfo"><em>Address:</em> ${user.address}</p>
-        <p class="userinfo"><em>Email:</em> ${user.email}</p>
-        <p class="userinfo"><em>Phone:</em> ${user.phoneNumber}</p>
-        <p class="userinfo"><em>Role:</em> ${user.role}</p>
-        <p class="userinfo"><em>Admin:</em> ${user.isAdmin}</p>
-        </a>
-        
+        <table>
+            <tr>
+                <th class="userinfo"><em>FIRST NAME</em></th>
+                <th class="userinfo"><em>LAST NAME</em></th>
+                <th class="userinfo"><em>DATE OF BIRTH</em></th>
+                <th class="userinfo"><em>ADDRESS</em></th>
+                <th class="userinfo"><em>EMAIL</em></th>
+                <th class="userinfo"><em>PHONE</em></th>
+                <th class="userinfo"><em>ROLE</em></th>
+                <th class="userinfo"><em>ADMIN</em></th>
+            </tr>
+            <c:forEach var ="user" items="${availableUsers}">
+                <tr class="userinfo">
+                    <td class="userinfo">${user.firstName}</td>
+                    <td class="userinfo">${user.lastName}</td>
+                    <td class="userinfo">${user.dateOfBirth}</td>
+                    <td class="userinfo">${user.address}</td>
+                    <td class="userinfo">${user.email}</td>
+                    <td class="userinfo">${user.phoneNumber}</td>
+                    <td class="userinfo">${user.role}</td>
+                    <td class="userinfo">${user.isAdmin}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </div>
-    </c:forEach>
 
-</div>
 </body>
 </html>
