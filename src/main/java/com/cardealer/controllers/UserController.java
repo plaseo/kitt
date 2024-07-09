@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 import com.cardealer.models.User;
 import com.cardealer.services.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -43,9 +43,9 @@ public class UserController {
     // session is used to save user information temporarily on the server
     // httpsession is used to store temporary data/ session-specific data
     @PostMapping("/signin")
-    public String submitSignIn(@ModelAttribute User user, Model model, HttpSession session) {
+    public String submitSignIn(@RequestParam("email") String email, @RequestParam("password") String Password, Model model, HttpSession session){
         try {
-            User authenticatedUser = userService.signIn(user);
+            User authenticatedUser = userService.signIn(email, Password);
 
             session.setAttribute("user", authenticatedUser);
             session.setAttribute("userRole", authenticatedUser.getRole());
@@ -96,7 +96,6 @@ public class UserController {
 
     @PostMapping("/editprofile")
     public String updateProfile(@ModelAttribute User user, HttpSession session) {
-        User editedUser = userService.editProfile(user, session);
         return "redirect:/userprofile";
     }
 

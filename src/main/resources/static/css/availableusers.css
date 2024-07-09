@@ -2,18 +2,22 @@ body {
     background-color:rgb(19, 19, 17)!important;
 }
 
+table {
+    border-collapse: separate !important;
+}
+
 .availableuserspage {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
-.useritems em {
+.userinfo em {
     color: red;
 }
 
 .useritems {
-    display: grid;
     border:5px solid;
     padding: 10px;
     margin: 5px;

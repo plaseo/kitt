@@ -3,6 +3,11 @@ package com.cardealer.services;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.cardealer.enums.UserRole;
 import com.cardealer.models.User;
@@ -10,13 +15,16 @@ import com.cardealer.repositories.UserRepository;
 import jakarta.servlet.http.HttpSession;
 
 @Service
-public class UserService{
+public class UserService implements UserDetailsService{
     //user service depends on the repository
     //user controller depends on the user service
     //user service is doing the actual work or the raw materials
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     //going in the method is user information from
     //  the sign up page in the form of a user object
@@ -26,18 +34,19 @@ public class UserService{
     public User signUp(User user){
 
         user.setRole(UserRole.BUYER);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
         return savedUser;
     }
 
-    public User signIn(User user) throws Exception{
+    public User signIn(String email, String password) throws Exception{
         //data we're working with: email, password
         //check if the user exist in the database based on the email given
-        User foundUser = userRepository.findByEmail(user.getEmail());
+        User foundUser = userRepository.findByEmail(email);
         //if a user is returned from the database
         if(foundUser != null){
             //if the found user's password matches the user's password
-            if(foundUser.getPassword().equals(user.getPassword())){
+            if(passwordEncoder.matches(password, foundUser.getPassword())){
                 //output the authenticated user
                 return foundUser;
             }
@@ -89,5 +98,15 @@ public class UserService{
         foundUser.setIsAdmin(user.getIsAdmin());
         User editedUser = userRepository.save(foundUser);
         return editedUser;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email){
+        User user = userRepository.findByEmail(email);
+        if(user == null){
+            throw new UsernameNotFoundException("User Not Found");
+        }
+        return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(), AuthorityUtils.createAuthorityList("ROLE_" + user.getRole()));
+        
     }
 }

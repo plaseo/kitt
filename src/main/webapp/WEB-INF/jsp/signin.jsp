@@ -16,7 +16,7 @@
 
     <div class = "signinpage">
         <div class="signinbox">
-            <form method="post" action="/signin">
+            <form:form method="post" action="/signin">
             <c:if test="${not empty errorMessage}">
                 <div>${errorMessage}</div>
             </c:if>
@@ -27,7 +27,7 @@
                 <a>Forgot Password?</a> <br>
                 <a>Forgot Username?</a> <br>
                 <button class="signinbutton" type="submit">Sign In</button>
-            </form>
+            </form:form>
         </div>
     </div>
 
