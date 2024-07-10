@@ -42,7 +42,7 @@ public class UserController {
 
     // session is used to save user information temporarily on the server
     // httpsession is used to store temporary data/ session-specific data
-    @PostMapping("/signin")
+    @PostMapping("/signinsubmit")
     public String submitSignIn(@RequestParam("email") String email, @RequestParam("password") String Password, Model model, HttpSession session){
         try {
             User authenticatedUser = userService.signIn(email, Password);
@@ -59,15 +59,13 @@ public class UserController {
             model.addAttribute("errorMessage", e.getMessage());
             return "signin";
         }
-
     }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         // clear any data that is set in the session
         session.invalidate();
-        return "signin";
-
+        return "signin";    
     }
 
     @GetMapping("/userprofile")

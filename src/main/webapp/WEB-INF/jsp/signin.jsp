@@ -1,4 +1,5 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 
     <div class = "signinpage">
         <div class="signinbox">
-            <form:form method="post" action="/signin">
+            <form:form method="post" action="/signinsubmit">
             <c:if test="${not empty errorMessage}">
                 <div>${errorMessage}</div>
             </c:if>
@@ -24,35 +25,12 @@
                 <input type = "email" name="email"/> <br>
                 <label>Password</label> <br>
                 <input type="password" name="password" /> <br>
-                <a>Forgot Password?</a> <br>
-                <a>Forgot Username?</a> <br>
                 <button class="signinbutton" type="submit">Sign In</button>
             </form:form>
         </div>
     </div>
 
-    <div class="map">
-        <h1>hello!</h1>
-        <gmp-map
-  center="43.4142989,-124.2301242"
-  zoom="4"
-  map-id="DEMO_MAP_ID"
-  style="height: 400px"
->
-  <gmp-advanced-marker
-    position="37.4220656,-122.0840897"
-    title="Mountain View, CA"
-  ></gmp-advanced-marker>
-  <gmp-advanced-marker
-    position="47.648994,-122.3503845"
-    title="Seattle, WA"
-  ></gmp-advanced-marker>
-</gmp-map>
-
-    </div>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=INSERTKEY&loading=async&libraries=maps,marker&v=beta" defer>
-    </script>
+   
       
 
 </body>

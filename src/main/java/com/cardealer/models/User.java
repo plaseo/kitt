@@ -1,7 +1,12 @@
 package com.cardealer.models;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.cardealer.enums.UserRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +25,7 @@ import lombok.Data;
 @Table(name = "user")
 @Data
 
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -63,9 +68,19 @@ public class User {
     @Column(name = "isAdmin")
     private Boolean isAdmin;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
     @OneToMany
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Car> cars;
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
 
     // public User(Long id, String firstName, String lastName, LocalDate dateOfBirth, String address, String email,
     //         String password, String phoneNumber, UserRole role, Boolean isAdmin, List<Car> cars) {

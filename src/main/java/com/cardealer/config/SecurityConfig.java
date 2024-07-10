@@ -1,6 +1,8 @@
 package com.cardealer.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -8,6 +10,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -33,8 +36,9 @@ public class SecurityConfig {
         //starts the configuration for authorizing http requests
         .authorizeHttpRequests(authorizeRequests -> authorizeRequests
         //specify the url patterns and their access rules
-        .requestMatchers("/", "/signin", "/cars", "/signup", "/cart", "/WEB-INF/jsp/*", "/css/**", "/startup-report", "/availableusers").permitAll()
-        .requestMatchers("/transactions").hasAnyRole("SELLER")
+        .requestMatchers("/", "/signin", "/signinsubmit", "/cars", "/signup", "/cart", "/WEB-INF/jsp/*", "/css/**", "/startup-report", "/cardetails/{id}").permitAll()
+        .requestMatchers("/transactions").hasRole("SELLER")
+        .requestMatchers("/availableusers").authenticated()
         //any other request must be authenticated
         .anyRequest().authenticated()
         )
@@ -59,7 +63,18 @@ public class SecurityConfig {
         .invalidateHttpSession(true)
         //delete the session cookie
         .deleteCookies("JSESSIONID")
-        .permitAll());
+        .permitAll())
+
+        .sessionManagement(session -> session
+        .sessionFixation().migrateSession()
+        //define our session creation policy
+        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+        //how many sessions a user can 
+        .maximumSessions(3)
+        //if the maximum sessions are reached what do we want to do
+        //true: prevent new session, false: allow new session and expire the old one
+        .maxSessionsPreventsLogin(false)
+        );
         
         return http.build();
     }
