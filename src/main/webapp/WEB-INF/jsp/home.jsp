@@ -15,7 +15,7 @@
 
         
         
-        <h1 class="home">Welcome Home ${user.firstName}</h1>
+        <h1 class="home">Welcome Home!</h1>
         
         
         <div class="homepage"></div>

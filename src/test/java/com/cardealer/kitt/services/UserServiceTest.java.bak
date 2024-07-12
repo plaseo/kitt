@@ -1,0 +1,47 @@
+package com.cardealer.services;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import com.cardealer.models.User;
+import com.cardealer.repositories.UserRepository;
+public class UserServiceTest {
+
+    //create an instance of the class we're testing and inject the mocks
+    //InjectMocks creates and instance of "UserService" and injects
+    //  the userRepository, passwordEncoder, and authenticationManager
+    //once we inject, we still need to create instances of these fields
+    @InjectMocks
+    private UserService userService;
+
+    //This annotation is used to create mock instances of the fields
+    //out mock objects are used to simulate the behavior of the actual dependencies
+
+    @Mock
+    private UserRepository userRepository;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
+
+    @Mock
+    private AuthenticationManager authenticationManager;
+
+    //initialize the mock objects, this line is necessary for 
+    //  processing the annotations and creating the mock objects
+    @BeforeEach
+    void setUp(){
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    void testSignUp(){
+        User user = new User();
+        user.setRoles(null);
+    }
+    
+    
+}

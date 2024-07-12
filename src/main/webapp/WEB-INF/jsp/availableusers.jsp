@@ -32,9 +32,8 @@
                         <td class="userinfo">${user.lastName}</td>
                         <td class="userinfo">${user.dateOfBirth}</td>
                         <td class="userinfo">${user.address}</td>
-                        <td class="userinfo">${user.email}</td>
+                        <td class="userinfo">${user.username}</td>
                         <td class="userinfo">${user.phoneNumber}</td>
-                        <td class="userinfo">${user.role}</td>
                         <td class="userinfo">${user.isAdmin}</td>
                     </tr>
                 </c:forEach>

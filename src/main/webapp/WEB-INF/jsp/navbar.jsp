@@ -1,4 +1,4 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,46 +11,20 @@
 </head>
 <body>
 
-    <!-- sessionScope accesses attributes that are stored in HttpSession object -->
-
     <div class = "nav">
-        
         <button class="navitem"><a href="/" >Home</a></button>
         <button class="navitem"><a href="/cars" >Cars</a></button>
-        <c:if test="${sessionScope.user.isAdmin == true}">
-            <button class="navitem"><a href="/availableusers" >Available Users</a></button>
-        </c:if>
-        
-        
-        <!-- we only want the signin and the signup to display if there is no user set in the session -->
-        <!-- we use the test attribute inside of the if tag to do a conditional statement -->
-        <c:if test="${empty sessionScope.user}">
-        <button class="navitem"><a href="/signin" >Sign-In</a></button>
-        <button class="navitem"><a href="/signup" >Sign-Up</a></button>
-        </c:if>
-        
-        
-        
-        
+        <button class="navitem"><a href="/availableusers" >Available Users</a></button>
 
-        <c:choose>
-            <c:when test="${sessionScope.userRole == 'BUYER'}">
-                <button class="navitem"><a href="/userprofile">User Profile</a></button>
-                <button class="navitem"><a href="/cart">Cart</a></button>
-                <!-- <button class="navitem"><a href="#">Cart</a></button> -->
-                <button class="navitem"><a href="/logout">Logout</a></button>
-            </c:when>
+        <sec:authorize access="isAuthenticated()">
+            <button class="navitem"><a href="/logout" >Logout</a></button>
+        </sec:authorize>
 
-            <c:when test="${sessionScope.userRole == 'SELLER'}">
-                <button class="navitem"><a href="/addcar">Add Car</a></button>
-                <button class="navitem"><a href="/transactions">View Reports</a></button>
-                <button class="navitem"><a href="/userprofile">User Profile</a></button>
-                <button class="navitem"><a href="/logout">Logout</a></button>
-            </c:when>
+        <sec:authorize access="!isAuthenticated()">
+            <button class="navitem"><a href="/login" >Login</a></button>
+        </sec:authorize>
 
-        </c:choose>
         
-
     </div>
 
 

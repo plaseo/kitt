@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <jsp:include page="navbar.jsp"/>
     <h1>Hello!</h1>
     <table border="1" >
         <tr>

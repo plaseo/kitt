@@ -1,8 +1,10 @@
+
 package com.cardealer.controllers;
 
-
+import java.security.Principal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,11 +12,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import com.cardealer.models.User;
 import com.cardealer.services.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+@Scope("session")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -24,9 +29,9 @@ public class UserController {
         return "home";
     }
 
-    @GetMapping("/signin")
-    public String signIn() {
-        return "signin";
+    @GetMapping("/login")
+    public String login() {
+        return "login";
     }
 
     @GetMapping("/signup")
@@ -42,45 +47,38 @@ public class UserController {
 
     // session is used to save user information temporarily on the server
     // httpsession is used to store temporary data/ session-specific data
-    @PostMapping("/signinsubmit")
-    public String submitSignIn(@RequestParam("email") String email, @RequestParam("password") String Password, Model model, HttpSession session){
-        try {
-            User authenticatedUser = userService.signIn(email, Password);
+    // @PostMapping("/login")
+    // public String submitSignIn(@RequestParam("email") String email, @RequestParam("password") String Password, Model model, HttpSession session){
+    //     try {
+    //         User authenticatedUser = userService.login(email, Password);
 
-            session.setAttribute("user", authenticatedUser);
-            session.setAttribute("userRole", authenticatedUser.getRole());
+    //         session.setAttribute("user", authenticatedUser);
+    //         session.setAttribute("userRole", authenticatedUser.getRoles());
 
-            // the parameters of addAttribute include: "attributeName"
-            // used to access the object on the webpage, and then
-            // you have actual object you want to pass to the webpage
-            model.addAttribute("user", authenticatedUser);
-            return "home";
-        } catch (Exception e) {
-            model.addAttribute("errorMessage", e.getMessage());
-            return "signin";
-        }
-    }
+    //         // the parameters of addAttribute include: "attributeName"
+    //         // used to access the object on the webpage, and then
+    //         // you have actual object you want to pass to the webpage
+    //         model.addAttribute("user", authenticatedUser);
+    //         return "home";
+    //     } catch (Exception e) {
+    //         model.addAttribute("errorMessage", e.getMessage());
+    //         return "signin";
+    //     }
+    // }
 
     @GetMapping("/logout")
     public String logout(HttpSession session) {
-        // clear any data that is set in the session
         session.invalidate();
-        return "signin";    
+        return "home";
     }
 
+    
     @GetMapping("/userprofile")
-    public String userProfile(HttpSession session, Model model) {
-        // get the object of the signed in user from the session
-        User sessionUser = (User) session.getAttribute("user");
-        // persist our object from the database
-        User user = userService.findUserById(sessionUser.getId());
-        if (user == null) {
-            return "signin";
-        } else {
-            model.addAttribute("user", user);
-            return "userprofile";
-        }
-        // have to go to db to get use1r object of signed in user
+    public String userProfile(Principal principal, Model model) {
+        String username = principal.getName();
+        User user = userService.findUserByUsername(username);
+        model.addAttribute("user", user);
+        return "userprofile";
     }
 
     @GetMapping("/editprofile/{id}")

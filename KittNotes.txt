@@ -42,5 +42,26 @@ Application.properties is complaining about line 18
 'spring.jpa.hibernate.naming-strategy' is an unknown property. Did you mean 'spring.jpa.hibernate.naming.implicit-strategy'?
 
 
+This is the previous user login before Spring Security
+public User signIn(String email, String password) throws Exception{
+        //data we're working with: email, password
+        //check if the user exist in the database based on the email given
+        User foundUser = userRepository.findByEmail(email);
+        //if a user is returned from the database
+        if(foundUser != null){
+            //if the found user's password matches the user's password
+            if(passwordEncoder.matches(password, foundUser.getPassword())){
+                //output the authenticated user
+                return foundUser;
+            }
+            else{
+                //wrong password was entered. throw exception
+                throw new Exception("Invalid credentials. Try password again");
+            }
+        }
+        throw new Exception("No account exists with the given email");
+    }
 
 
+
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>

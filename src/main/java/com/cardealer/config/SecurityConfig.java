@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,13 +22,6 @@ import com.cardealer.services.UserService;
 //enables web security support and provides the spring mvc integration
 @EnableWebSecurity
 public class SecurityConfig {
-    
-    private UserService userService;
-
-    //Lazy is used to control initialization of beans, created only when requested
-    public SecurityConfig(@Lazy UserService userService){
-        this.userService = userService;
-    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -36,45 +30,22 @@ public class SecurityConfig {
         //starts the configuration for authorizing http requests
         .authorizeHttpRequests(authorizeRequests -> authorizeRequests
         //specify the url patterns and their access rules
-        .requestMatchers("/", "/signin", "/signinsubmit", "/cars", "/signup", "/cart", "/WEB-INF/jsp/*", "/css/**", "/startup-report", "/cardetails/{id}").permitAll()
+        .requestMatchers("/", "/logout", "/login", "/cars", "/signup", "/cart", "/WEB-INF/jsp/*", "/css/**", "error", "/startup-report", "/cardetails/{id}", "/home").permitAll()
         .requestMatchers("/transactions").hasRole("SELLER")
-        .requestMatchers("/availableusers").authenticated()
         //any other request must be authenticated
         .anyRequest().authenticated()
         )
 
-        //configure form based authentication
         .formLogin(form -> form
-        //specify the custom login page url
-        .loginPage("/signin")
-        //the url to submit the email and password(form action)
-        .loginProcessingUrl("/signin")
-        //the default url to redirect after a successful login
+        .loginPage("/login")
         .defaultSuccessUrl("/")
-        //allows all users to access the login page and submit login credentials
         .permitAll()
         )
 
-        //configure the logout functionality
-        .logout(logout -> logout
-        //URL to trigger logout
-        .logoutUrl("/logout")
-        //invalidate/clear the session upon logout
-        .invalidateHttpSession(true)
-        //delete the session cookie
-        .deleteCookies("JSESSIONID")
-        .permitAll())
-
-        .sessionManagement(session -> session
-        .sessionFixation().migrateSession()
-        //define our session creation policy
-        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-        //how many sessions a user can 
-        .maximumSessions(3)
-        //if the maximum sessions are reached what do we want to do
-        //true: prevent new session, false: allow new session and expire the old one
-        .maxSessionsPreventsLogin(false)
+        .logout((logout) -> logout.logoutSuccessUrl("/home")
         );
+
+        
         
         return http.build();
     }
@@ -86,18 +57,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    //Authentication Manager Bean
-    //retrieve the authentication manager from the authentication configuration. The authentication is responsible for processing authentication requests
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception{
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    //UserDetailsService bean
-    //register our own "UserService class" as the UserDetailsService bean, which is used to load user details from the database. It does that via a method called "loadUserByUsername"
-    @Bean
-    public UserDetailsService UserDetailsService(){
-        return userService;
-    }
+    
+   
 
 }
