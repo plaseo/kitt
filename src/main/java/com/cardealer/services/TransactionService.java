@@ -1,5 +1,6 @@
 package com.cardealer.services;
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,8 @@ import com.cardealer.models.Cart;
 import com.cardealer.models.Transaction;
 import com.cardealer.models.User;
 import com.cardealer.repositories.TransactionRepository;
+import com.cardealer.repositories.UserRepository;
+
 import jakarta.servlet.http.HttpSession;
 import com.cardealer.repositories.CarRepository;
 
@@ -22,9 +25,12 @@ public class TransactionService {
     @Autowired
     private CarRepository carRepository;
 
-    public boolean createTransaction(Cart cart, HttpSession session){
-        User sessionUser = (User) session.getAttribute("user");
-        
+    @Autowired
+    private UserRepository userRepository;
+
+    public boolean createTransaction(Cart cart, Principal principal){
+        String username = principal.getName();
+        User sessionUser = userRepository.findByUsername(username);
         Transaction transaction = new Transaction();
         transaction.setDate(LocalDate.now());
         transaction.setUser(sessionUser);    

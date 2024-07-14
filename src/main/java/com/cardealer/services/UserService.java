@@ -25,6 +25,7 @@ import com.cardealer.models.Role;
 import com.cardealer.models.User;
 import com.cardealer.repositories.UserRepository;
 import jakarta.servlet.http.HttpSession;
+import java.security.Principal;
 
 @Service
 public class UserService implements UserDetailsService{
@@ -38,35 +39,12 @@ public class UserService implements UserDetailsService{
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    //going in the method is user information from
-    //  the sign up page in the form of a user object
-    //going out of the method(after the user information is processed)
-    //is a saved user object
-
     public User signUp(User user){
 
         user.setRole(UserRole.BUYER);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User savedUser = userRepository.save(user);
         return savedUser;
-    }
-    public User login(String username, String password) throws Exception{
-        //data we're working with: email, password
-        //check if the user exist in the database based on the email given
-        User foundUser = userRepository.findByUsername(username);
-        //if a user is returned from the database
-        if(foundUser != null){
-            //if the found user's password matches the user's password
-            if(passwordEncoder.matches(password, foundUser.getPassword())){
-                //output the authenticated user
-                return foundUser;
-            }
-            else{
-                //wrong password was entered. throw exception
-                throw new Exception("Invalid credentials. Try password again");
-            }
-        }
-        throw new Exception("No account exists with the given email");
     }
 
     public User findUserById(Long id) {
@@ -79,22 +57,22 @@ public class UserService implements UserDetailsService{
         return user;
     }
 
-    public User editProfile(User user, HttpSession session) {
-        // HttpSession session;
-        User sessionUser = (User) session.getAttribute("user");
+    public User editProfile(Principal principal, User user) {
+        String username = principal.getName();
+        User sessionUser = userRepository.findByUsername(username);
         //go to the database and find the user that needs to be edited
-        User usertoedit = userRepository.findById(sessionUser.getId()).orElse(null);
+        // User usertoedit = userRepository.findById(sessionUser.getId()).orElse(null);
         //modify user data from editprofile page
-        usertoedit.setFirstName(user.getFirstName());
-        usertoedit.setLastName(user.getLastName());
-        usertoedit.setDateOfBirth(user.getDateOfBirth());
-        usertoedit.setAddress(user.getAddress());
-        usertoedit.setUsername(user.getUsername());
-        usertoedit.setPhoneNumber(user.getPhoneNumber());
+        sessionUser.setFirstName(user.getFirstName());
+        sessionUser.setLastName(user.getLastName());
+        sessionUser.setDateOfBirth(user.getDateOfBirth());
+        sessionUser.setAddress(user.getAddress());
+        sessionUser.setUsername(user.getUsername());
+        sessionUser.setPhoneNumber(user.getPhoneNumber());
         //store the modified object in the user table
         //when you modify and object before calling the save method in the repository
         //  it will run an update SQL query 
-        User editedUser = userRepository.save(usertoedit);
+        User editedUser = userRepository.save(sessionUser);
         return editedUser;
 
     }
@@ -111,12 +89,12 @@ public class UserService implements UserDetailsService{
         foundUser.setUsername(user.getUsername());
         foundUser.setPassword(user.getPassword());
         foundUser.setPhoneNumber(user.getPhoneNumber());
-        foundUser.setRole(user.getRole());
+        // foundUser.setRole(user.getRole());
         foundUser.setIsAdmin(user.getIsAdmin());
         User editedUser = userRepository.save(foundUser);
         return editedUser;
     }
-
+    
     @Override
     public UserDetails loadUserByUsername(String username){
         User user = userRepository.findByUsername(username);

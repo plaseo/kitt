@@ -25,7 +25,19 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/")
-    public String loadHome() {
+    public String loadHome(Principal principal, Model model) {
+        if(principal == null) {
+            return "home";
+        }else{String username = principal.getName();
+            User user = userService.findUserByUsername(username);
+            model.addAttribute("user", user); 
+            return "home";
+        }     
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
         return "home";
     }
 
@@ -45,34 +57,6 @@ public class UserController {
         return "signin";
     }
 
-    // session is used to save user information temporarily on the server
-    // httpsession is used to store temporary data/ session-specific data
-    // @PostMapping("/login")
-    // public String submitSignIn(@RequestParam("email") String email, @RequestParam("password") String Password, Model model, HttpSession session){
-    //     try {
-    //         User authenticatedUser = userService.login(email, Password);
-
-    //         session.setAttribute("user", authenticatedUser);
-    //         session.setAttribute("userRole", authenticatedUser.getRoles());
-
-    //         // the parameters of addAttribute include: "attributeName"
-    //         // used to access the object on the webpage, and then
-    //         // you have actual object you want to pass to the webpage
-    //         model.addAttribute("user", authenticatedUser);
-    //         return "home";
-    //     } catch (Exception e) {
-    //         model.addAttribute("errorMessage", e.getMessage());
-    //         return "signin";
-    //     }
-    // }
-
-    @GetMapping("/logout")
-    public String logout(HttpSession session) {
-        session.invalidate();
-        return "home";
-    }
-
-    
     @GetMapping("/userprofile")
     public String userProfile(Principal principal, Model model) {
         String username = principal.getName();
@@ -81,17 +65,18 @@ public class UserController {
         return "userprofile";
     }
 
-    @GetMapping("/editprofile/{id}")
-    // retrieve the user object we want to edit from the database
-    // we want to pass that user object to the edit profile so we can edit
-    public String editProfile(@PathVariable Long id, Model model) {
-        User user = userService.findUserById(id);
+    @GetMapping("/editprofile")
+    public String editProfile(Principal principal, Model model) {
+        // User user = userService.findUserById(id);
+        String username = principal.getName();
+        User user = userService.findUserByUsername(username);
         model.addAttribute("user", user);
         return "editprofile";
     }
 
     @PostMapping("/editprofile")
-    public String updateProfile(@ModelAttribute User user, HttpSession session) {
+    public String updateProfile(Principal principal, @ModelAttribute User user) {
+        User editedUser = userService.editProfile(principal, user);
         return "redirect:/userprofile";
     }
 

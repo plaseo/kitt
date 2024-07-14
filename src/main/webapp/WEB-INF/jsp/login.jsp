@@ -17,10 +17,12 @@
 
     <div class = "signinpage">
         <div class="signinbox">
+            <c:if test="${param.error != null}">
+                    <div style="color: red;">
+                        Invalid username or password.
+                    </div>
+                </c:if>
             <form:form method="post" action="/login">
-            <c:if test="${not empty errorMessage}">
-                <div>${errorMessage}</div>
-            </c:if>
                 <label>Username</label> <br>
                 <input type = "username" name="username"/> <br>
                 <label>Password</label> <br>
@@ -28,6 +30,7 @@
                 <button class="signinbutton" type="submit">Sign In</button>
             </form:form>
         </div>
+
     </div>
 
    

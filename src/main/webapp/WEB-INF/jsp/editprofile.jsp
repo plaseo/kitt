@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!-- <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +9,13 @@
     <link rel=stylesheet href="/css/editprofile.css"/>
 </head>
 <body>
-<div class="masterdiv">
+
     <jsp:include page="navbar.jsp"/>
 
-    <h1 class="editprofileheader">Edit ${user.firstName}'s Profile</h1>
+    <h1 class="editprofileheader">Edit Profile</h1>
 <div class="editprofilepage">
     <div class="editprofilebox">
-        <form method="post" action="/editprofile">
+        <form:form method="post" action="/editprofile">
             <label>First Name</label> <br>
             <input type="text" name="firstName" value="${user.firstName}" /> <br>
             <label>Last Name</label><br>
@@ -24,13 +25,12 @@
             <label>Address</label><br>
             <input type="text" name="address" value="${user.address}" /> <br>
             <label>Email</label><br>
-            <input type="text" name="email" value="${user.email}" /> <br>
+            <input type="text" name="username" value="${user.username}" /> <br>
             <label>Phone Number</label> <br>
             <input type="text" name="phoneNumber" value="${user.phoneNumber}" /> <br>
             <button class="submitbutton">Submit</button>
-        </form>
-    </div>
-</div>
-</div>  
+        </form:form>
+    </div> 
+</div> 
 </body>
 </html>

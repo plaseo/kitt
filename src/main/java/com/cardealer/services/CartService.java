@@ -1,5 +1,6 @@
 package com.cardealer.services;
 
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cardealer.models.Car;
@@ -23,8 +24,10 @@ public class CartService {
     private UserRepository userRepository;
 
 
-    public Cart getCart(HttpSession session) {
-        User sessionUser = (User) session.getAttribute("user");
+    public Cart getCart(Principal principal) {
+        String username = principal.getName();
+        User sessionUser = userRepository.findByUsername(username);
+        // User sessionUser = (User) session.getAttribute("user");
         User user = userRepository.findById(sessionUser.getId()).orElse(null);
         //get cart previously set in the user session
         // Cart cart = (Cart) session.getAttribute("cart");
@@ -33,8 +36,6 @@ public class CartService {
         if (cart == null) {
             //initialize a new cart
             cart = new Cart();
-            //set a new cart if no cart has been set
-            session.setAttribute("cart", cart);
             //save cart in the db
             cartRepository.save(cart);
             //set the cart for teh current signed in user
@@ -46,9 +47,9 @@ public class CartService {
     }
 
     //add to cart
-    public void addToCart(Long id, HttpSession session) {
+    public void addToCart(Long id, Principal principal) {
         //get the cart associated w/user we want to add a car to
-        Cart cart = getCart(session);
+        Cart cart = getCart(principal);
         //use the car id from teh car details page to retrieve the car object
         Car carToAdd = carRepository.findById(id).orElse(null);
         //if a car comes back from the database 
@@ -59,9 +60,9 @@ public class CartService {
         }
     }
 
-    public void removeFromCart(Long id, HttpSession session) {
+    public void removeFromCart(Long id, Principal principal) {
         //get the cart from the current session
-        Cart cart = getCart(session);
+        Cart cart = getCart(principal);
         Car carToRemove = null;
         for(Car car: cart.getItemsInCart()) {
             if(car.getId() == id) {

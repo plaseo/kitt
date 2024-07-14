@@ -10,22 +10,41 @@
 </head>
 <body>
 
-    <!-- <div class="big-margin"> -->
         <jsp:include page="navbar.jsp"/>
 
-        
-        
-        <h1 class="home">Welcome Home!</h1>
-        
-        
+        <h1 class="home">Welcome Home! ${user.firstName}</h1>
+
         <div class="homepage"></div>
-        
 
     <div>
         <footer>
         CopyRight Area, Contact Us, Support
         </footer>
     </div>
+
+
+    <div class="map">
+        <h1>hello!</h1>
+        <gmp-map
+  center="43.4142989,-124.2301242"
+  zoom="4"
+  map-id="DEMO_MAP_ID"
+  style="height: 400px"
+>
+  <gmp-advanced-marker
+    position="37.4220656,-122.0840897"
+    title="Mountain View, CA"
+  ></gmp-advanced-marker>
+  <gmp-advanced-marker
+    position="47.648994,-122.3503845"
+    title="Seattle, WA"
+  ></gmp-advanced-marker>
+</gmp-map>
+
+    </div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVZe2s7jXsjleR41xQk2bMJ0UQx5NCwjs&loading=async&libraries=maps,marker&v=beta" defer>
+    </script>
     
 
 </body>

@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/css/userprofile.css"/>
 </head>
 <body>
-<p>current session info: ${username}</p>
 
-<div class="masterdiv">
+
+
 
     <jsp:include page ="navbar.jsp"/>
 
@@ -21,10 +21,12 @@
         <div class="editprofile">
             <p>${user.username}</p>
             <p>${user.firstName}</p>
+            <p>${user.id}</p>
+
             
             <p>blah</p>
             <p>blah</p>
-            <a href="/editprofile/"><button class="submitbutton">Edit Profile</button></a>
+            <a href="/editprofile"><button class="submitbutton">Edit Profile</button></a>
         </div>
     </div>
 
@@ -35,6 +37,6 @@
         LoggedIn!
     </sec:authorize>
 
-</div>
+
 </body>
 </html>

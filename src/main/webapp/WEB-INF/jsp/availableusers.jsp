@@ -14,16 +14,15 @@
     <div class="availableuserspage">
         <div>
             <table>
-            <div class="useritems">
+            <div class="">
                 <tr> 
-                    <th class="userinfo"><em>FIRST NAME</em></th>
-                    <th class="userinfo"><em>LAST NAME</em></th>
-                    <th class="userinfo"><em>DATE OF BIRTH</em></th>
-                    <th class="userinfo"><em>ADDRESS</em></th>
-                    <th class="userinfo"><em>EMAIL</em></th>
-                    <th class="userinfo"><em>PHONE</em></th>
-                    <th class="userinfo"><em>ROLE</em></th>
-                    <th class="userinfo"><em>ADMIN</em></th>
+                    <th class="userinfo" >&nbsp<i class="fa-solid fa-user" style="color: #2ea34f;">&nbsp&nbsp<em>FIRST NAME</em></i>&nbsp</th>
+                    <th class="userinfo">&nbsp<i class="fa-solid fa-user" style="color: #2ea34f;">&nbsp&nbsp<em>LAST NAME</em></i>&nbsp</th>
+                    <th class="userinfo">&nbsp<i class="fa-solid fa-cake-candles" style="color: #2ea34f;">&nbsp&nbsp<em> DATE OF BIRTH</em></i>&nbsp</th>
+                    <th class="userinfo">&nbsp<i class="fa-solid fa-map-location-dot" style="color: #2ea34f;">&nbsp&nbsp<em>ADDRESS</em></i>&nbsp</th>
+                    <th class="userinfo">&nbsp<i class="fa-solid fa-envelope" style="color: #2ea34f;">&nbsp&nbsp<em>EMAIL</em></i>&nbsp</th>
+                    <th class="userinfo">&nbsp<i class="fa-solid fa-phone-flip" style="color: #2ea34f;">&nbsp&nbsp<em>PHONE</em></i>&nbsp</th>
+                    <th class="userinfo">&nbsp<i class="fa-solid fa-users-gear" style="color: #2ea34f;">&nbsp&nbsp<em>ROLES</em></i>&nbsp</th>
                 </tr>
             </div>
                 <c:forEach var ="user" items="${availableUsers}">
@@ -34,12 +33,18 @@
                         <td class="userinfo">${user.address}</td>
                         <td class="userinfo">${user.username}</td>
                         <td class="userinfo">${user.phoneNumber}</td>
-                        <td class="userinfo">${user.isAdmin}</td>
+                        <td class="userinfo">${user.roles}</td>
+                        <td>
+                            <a href="/userdetails/${user.id}">
+                                <button class="btn"><i class="fa-solid fa-pen" style="color: #2ea44f; background-color: black"></i></button>
+                            </a>
+                        </td>
+                        <!-- <td><a href="/userdetails/${user.id}"><button type="submit" i class="fa-solid fa-pen"></button></a></td> -->
                     </tr>
                 </c:forEach>
             </table>
         </div>
     </div>
-
+    <script src="https://kit.fontawesome.com/fae6cf0705.js" crossorigin="anonymous"></script>
 </body>
 </html>

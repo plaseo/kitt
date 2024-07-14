@@ -1,4 +1,4 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,17 +22,17 @@
             <input type="text" name="dateOfBirth" value="${user.dateOfBirth}" /> <br>
             <label>Address</label><br>
             <input type="text" name="address" value="${user.address}" /> <br>
-            <label>Email</label><br>
-            <input type="text" name="email" value="${user.email}" /> <br>
+            <label>Username</label><br>
+            <input type="text" name="username" value="${user.username}" /> <br>
             <label>Password</label><br>
             <input type="text" name="password" value="${user.password}" /> <br>
             <label>Phone Number</label> <br>
             <input type="text" name="phoneNumber" value="${user.phoneNumber}" /> <br>
-            <label>Role</label><br>
-            <input type="text" name="role" value="${user.role}" /> <br>
+            <label>Roles</label><br>
+            <input type="text" name="role" value="${user.roles}" /> <br>
             <label>Is Admin</label><br>
             <input type="text" name="isAdmin" value="${user.isAdmin}" /> <br>
-            <button class="submitbutton">Submit</button>
+            <button>Submit</button>
         </form:form>
     </div>
 </div>

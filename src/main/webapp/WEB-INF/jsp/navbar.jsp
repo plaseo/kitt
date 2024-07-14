@@ -17,12 +17,16 @@
         <button class="navitem"><a href="/availableusers" >Available Users</a></button>
 
         <sec:authorize access="isAuthenticated()">
-            <button class="navitem"><a href="/logout" >Logout</a></button>
+            <button class="navitem"><a href="/userprofile" >Profile</a></button>
         </sec:authorize>
 
         <sec:authorize access="!isAuthenticated()">
             <button class="navitem"><a href="/login" >Login</a></button>
         </sec:authorize>
+
+        <sec:authorize access="isAuthenticated()">
+            <button class="navitem"><a href="/logout" >Logout</a></button>
+        </sec:authorize>    
 
         
     </div>

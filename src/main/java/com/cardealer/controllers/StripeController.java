@@ -1,5 +1,6 @@
 package com.cardealer.controllers;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,9 @@ public class StripeController {
     private TransactionService transactionService;
 
     @GetMapping("/v1/checkout/sessions")
-    public String createCheckout(HttpSession session) {
+    public String createCheckout(Principal principal) {
         Stripe.apiKey = stripeApiKey;
-        Cart cart = cartService.getCart(session);
+        Cart cart = cartService.getCart(principal);
         List<SessionCreateParams.LineItem> lineItems = new ArrayList<>();
         for(Car car: cart.getItemsInCart()){
             lineItems.add(
@@ -81,9 +82,9 @@ public class StripeController {
     }
 
     @GetMapping ("/payment/success")
-    public String successPay(HttpSession session){
-        Cart cart = cartService.getCart(session);
-        transactionService.createTransaction(cart, session);
+    public String successPay(Principal principal){
+        Cart cart = cartService.getCart(principal);
+        transactionService.createTransaction(cart, principal);
         return "success";
     }
 

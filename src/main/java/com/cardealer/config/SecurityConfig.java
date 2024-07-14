@@ -27,10 +27,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
+        
         //starts the configuration for authorizing http requests
         .authorizeHttpRequests(authorizeRequests -> authorizeRequests
         //specify the url patterns and their access rules
-        .requestMatchers("/", "/logout", "/login", "/cars", "/signup", "/cart", "/WEB-INF/jsp/*", "/css/**", "error", "/startup-report", "/cardetails/{id}", "/home").permitAll()
+        .requestMatchers("/", "/logout", "/login", "/cars", "/signup", "/WEB-INF/jsp/*", "/css/**", "error", "/startup-report", "/cardetails/{id}", "/home", "/editprofile").permitAll()
         .requestMatchers("/transactions").hasRole("SELLER")
         //any other request must be authenticated
         .anyRequest().authenticated()
@@ -40,11 +41,7 @@ public class SecurityConfig {
         .loginPage("/login")
         .defaultSuccessUrl("/")
         .permitAll()
-        )
-
-        .logout((logout) -> logout.logoutSuccessUrl("/home")
         );
-
         
         
         return http.build();

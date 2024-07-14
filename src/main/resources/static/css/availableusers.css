@@ -15,6 +15,7 @@ table {
 
 .userinfo em {
     color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .useritems {
@@ -51,8 +52,14 @@ table {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
     font-weight: bold;
-    border-color: rgba(64, 166, 250, 0.500);
+    border-color: rgb(64, 166, 250);
     color: white;
     background-color: rgb(9, 24, 19);
     text-align: center;
+}
+
+
+
+.btn {
+    background-color: red;
 }
