@@ -1,17 +1,11 @@
 package com.cardealer.models;
 
 import java.time.LocalDate;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import com.cardealer.enums.UserRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,7 +27,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "firstName")
+    @Column(name = "firstName") 
     private String firstName;
 
     @Column(name = "lastName")
@@ -59,23 +53,18 @@ public class User {
     private Cart cart;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "user_roles", 
+    @JoinTable(name = "user_roles",
                joinColumns = @JoinColumn(name = "user_id"), 
                inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
-    
-    @Column(name = "isAdmin")
-    private Boolean isAdmin;
 
-    //this specifies that the method returns a collection of objects that
-    //  implement the "GrantedAuthority" interface which represents an
-    //      authority granted to a user
+    public void addRole(Role role) {
+        this.roles.add(role);
+    }
 
     @OneToMany
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private List<Car> cars;
-
-
 
     public User(){
 

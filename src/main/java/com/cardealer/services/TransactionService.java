@@ -13,7 +13,6 @@ import com.cardealer.models.User;
 import com.cardealer.repositories.TransactionRepository;
 import com.cardealer.repositories.UserRepository;
 
-import jakarta.servlet.http.HttpSession;
 import com.cardealer.repositories.CarRepository;
 
 @Service

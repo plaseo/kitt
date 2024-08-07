@@ -18,7 +18,6 @@ import com.stripe.exception.StripeException;
 import com.stripe.model.Balance;
 import com.stripe.model.checkout.Session;
 import com.stripe.param.checkout.SessionCreateParams;
-import jakarta.servlet.http.HttpSession;
 
 //we're working with a rest API
 @Controller

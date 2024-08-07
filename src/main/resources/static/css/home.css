@@ -29,5 +29,8 @@ footer {
     text-align: end; 
 }
 
-
+.flexme {
+    display: flex;
+    align-items: end;
+}
 

@@ -12,6 +12,7 @@
 </head>
 <body>
     <jsp:include page="navbar.jsp"/>
+    <p style="color: red;text-align:center">${signupsuccess}</p>
 
     <h1 class="signinheader">Login</h1>
 
@@ -30,7 +31,7 @@
                 <button class="signinbutton" type="submit">Sign In</button>
             </form:form>
         </div>
-
+        
     </div>
 
    

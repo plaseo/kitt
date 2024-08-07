@@ -12,23 +12,36 @@
 <body>
 
     <div class = "nav">
-        <button class="navitem"><a href="/" >Home</a></button>
-        <button class="navitem"><a href="/cars" >Cars</a></button>
-        <button class="navitem"><a href="/availableusers" >Available Users</a></button>
+        <a href="/" class="navitem" >Home</a>
+        <a href="/cars" class="navitem" >Cars</a>
 
+        <sec:authorize access="hasRole('SELLER')">
+            <a href="/addcar" class="navitem">Add Car</a>
+         </sec:authorize>
+        
         <sec:authorize access="isAuthenticated()">
-            <button class="navitem"><a href="/userprofile" >Profile</a></button>
+            <a href="/userprofile" class="navitem" >Profile</a>
+        </sec:authorize>
+
+        <sec:authorize access="hasRole('ADMIN')">
+            <a href="/availableusers" class="navitem" >Available Users</a>
         </sec:authorize>
 
         <sec:authorize access="!isAuthenticated()">
-            <button class="navitem"><a href="/login" >Login</a></button>
+            <a href="/signup" class="navitem" >Signup</a>
+        </sec:authorize>
+
+        <sec:authorize access="!isAuthenticated()">
+            <a href="/login" class="navitem" >Login</a>
+        </sec:authorize>
+
+        <sec:authorize access="hasRole('BUYER')">
+            <a href="/cart" class="navitem" >Cart</a>
         </sec:authorize>
 
         <sec:authorize access="isAuthenticated()">
-            <button class="navitem"><a href="/logout" >Logout</a></button>
-        </sec:authorize>    
-
-        
+            <a href="/logout" class="navitem" >Logout</a>
+        </sec:authorize>
     </div>
 
 

@@ -28,7 +28,7 @@
                 <label>Phone Number</label> <br>
                 <input type ="text" name="phoneNumber"/> <br>
                 <label>Email</label> <br>
-                <input type="email" name="email" /> <br>
+                <input type="username" name="username" /> <br>
                 <label>Password</label> <br>
                 <input type ="password" name ="password" /> <br>
 

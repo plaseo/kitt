@@ -4,6 +4,7 @@ package com.cardealer.controllers;
 import java.security.Principal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import com.cardealer.models.User;
+import com.cardealer.repositories.RoleRepository;
 import com.cardealer.services.UserService;
 import jakarta.servlet.http.HttpSession;
 
@@ -24,17 +23,24 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @Value("${maps.apiKey}")
+    public String mapsApiKey;
+
     @GetMapping("/")
     public String loadHome(Principal principal, Model model) {
+        model.addAttribute("mapsApiKey", mapsApiKey);
         if(principal == null) {
             return "home";
         }else{String username = principal.getName();
             User user = userService.findUserByUsername(username);
             model.addAttribute("user", user); 
             return "home";
-        }     
+        }
     }
-
+    
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
@@ -52,9 +58,9 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String submitSignUp(@ModelAttribute User user) {
-        User savedUser = userService.signUp(user);
-        return "signin";
+    public String submitSignUp(@ModelAttribute User user, HttpSession session) {
+        User savedUser = userService.signUp(user, session);
+        return "redirect:/login ";
     }
 
     @GetMapping("/userprofile")
@@ -67,7 +73,6 @@ public class UserController {
 
     @GetMapping("/editprofile")
     public String editProfile(Principal principal, Model model) {
-        // User user = userService.findUserById(id);
         String username = principal.getName();
         User user = userService.findUserByUsername(username);
         model.addAttribute("user", user);
@@ -83,9 +88,10 @@ public class UserController {
     @GetMapping("/availableusers")
     public String availableUsers(Model model) {
         List<User> availableUsers = userService.findAllUsers();
-        model.addAttribute("availableUsers", availableUsers);
+        model.addAttribute("availableUsers", availableUsers); 
         return "availableusers";
     }
+
     @GetMapping("/userdetails/{id}")
     public String userDetail(@PathVariable Long id, Model model){
         User user = userService.findUserById(id);
@@ -95,7 +101,14 @@ public class UserController {
     @PostMapping("/userdetails/{id}")
     public String editUser(@ModelAttribute User user, @PathVariable Long id) {
         User editedUser = userService.editUser(user, id);
+        String fruits = 
         return "redirect:/availableusers";
     }
 
+    @PostMapping("/userdetails/updaterolls")
+    public String updateRoles(){
+        String fruits = request.getPara
+        
+    }
+    
 }

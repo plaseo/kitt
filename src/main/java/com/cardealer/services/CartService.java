@@ -9,7 +9,6 @@ import com.cardealer.models.User;
 import com.cardealer.repositories.CarRepository;
 import com.cardealer.repositories.CartRepository;
 import com.cardealer.repositories.UserRepository;
-import jakarta.servlet.http.HttpSession;
 
 @Service
 public class CartService {
